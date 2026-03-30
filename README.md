@@ -86,7 +86,6 @@ VEDA/
 
 ## 👤 Author
 
-- **과정**: VEDA (Vocational Education & Development Academy)
 - **분야**: C언어 시스템 프로그래밍
 - **목표**: 포인터, 구조체, 메모리 함수 → C-ASM 수준까지
 

@@ -1,6 +1,6 @@
-# 📚 VEDA C Language Study
+# 📚 C Language Study
 
-> VEDA 교육과정에서 진행하는 C언어 학습 기록 저장소입니다.  
+> C언어 학습 기록 저장소입니다.  
 > 강의 노트, 코드베이스, Q&A를 체계적으로 정리합니다.
 
 ---
@@ -8,7 +8,7 @@
 ## 🗂️ 저장소 구조
 
 ```
-VEDA/
+WS/
 ├── workspace/          # 실습 C 소스코드
 │   └── Week1/
 │       └── Day1/

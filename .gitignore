@@ -1,37 +1,7 @@
-# Visual Studio
-.vs/
-*.user
-*.suo
-*.sdf
-*.opensdf
-*.vcxproj.filters
-*.vcxproj.user
-x64/
-x86/
-Debug/
-Release/
-ipch/
-*.aps
-*.ncb
-*.opendb
-*.db
-*.db-shm
-*.db-wal
-
-# Compiled object files
-*.obj
-*.o
+# Binary files
 *.exe
-*.pdb
-*.ilk
+*.o
+*.obj
 
-# Obsidian
-.obsidian/
-
-# VSCode (keep settings if needed)
-.vscode/
-
-# OS files
-Thumbs.db
-.DS_Store
-desktop.ini
+# Log files
+log.txt

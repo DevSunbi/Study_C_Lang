@@ -14,7 +14,9 @@ VEDA/
 │   └── Week2/
 │       ├── Day6/
 │       ├── Day7/
-│       └── Day8/       # 구조체 실습 (Point, Line)
+│       ├── Day8/       # 구조체 실습 (Point, Line)
+│       └── CPPSolution/
+│           └── Day8CppApp/ # C++ 기초 입출력 실습
 ├── GroupStudy/         # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -48,7 +50,7 @@ VEDA/
 |-----|------|------|-----------|
 | **Week 1** | Day 1~5 | 기초 및 포인터 | 기초 문법, 함수, 배열, **포인터**(핵심), 아스키코드 |
 | **Week 2** | Day 6~7 | 심화 및 메모리 | 문자열 함수, 변수 영역(static 등), **이중 포인터**, **동적 할당**(malloc/free) |
-| **Week 2** | Day 8 | 구조체 | `typedef struct` 정의, **Point / Line** 구조체 실습 |
+| **Week 2** | Day 8 | 구조체 & C++ 입출력 | `typedef struct` 정의, **Point / Line** 구조체 실습, C++ `cin/cout` 기초 |
 
 ---
 

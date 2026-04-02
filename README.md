@@ -14,19 +14,27 @@ VEDA/
 │   └── Week2/
 │       ├── Day6/
 │       ├── Day7/
-│       ├── Day8/       # 구조체 실습 (Point, Line)
+│       ├── Day8/           # 구조체 실습 (Point, Line)
 │       └── CPPSolution/
 │           └── Day8CppApp/ # C++ 기초 입출력 실습
-├── GroupStudy/         # 그룹 스터디 (알고리즘 및 심화 주제)
+├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
 │   ├── Insertion_Sort.cpp
-│   └── practice_2751.c # BOJ 2751: 버블/선택/삽입 정렬 비교
-├── MD/                 # 강의 노트 (Obsidian Markdown)
-│   ├── VEDA Study.md   # 전체 학습 목차
+│   └── practice_2751.c     # BOJ 2751: 버블/선택/삽입 정렬 비교
+├── MD/                     # 강의 노트 (Obsidian Markdown)
+│   ├── VEDA Study.md       # 전체 학습 목차
 │   ├── Week1/
+│   │   ├── Day 1/  → Day 1.md, CodeBase.md, Intro(OT).md, QnA.md
+│   │   ├── Day 2/  → Day 2.md, CodeBase.md, QnA.md
+│   │   ├── Day 3/  → Day 3.md, CodeBase.md, QnA.md
+│   │   ├── Day 4/  → Day 4.md, CodeBase.md, QnA.md
+│   │   └── Day 5/  → Day 5.md, CodeBase.md, QnA.md
 │   └── Week2/
-├── .gitignore          # 바이너리 및 로그 제외 설정
+│       ├── Day 6/  → Day 6.md, CodeBase.md, QnA.md
+│       ├── Day 7/  → Day 7.md, CodeBase.md, QnA.md
+│       └── Day 8/  → Day 8.md, CodeBase.md, QnA.md
+├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
 

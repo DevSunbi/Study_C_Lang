@@ -69,8 +69,11 @@ VEDA/
 - ✅ **포인터 및 메모리 구조 이해** (변수, 배열, 함수 포인터 등)
 - ✅ **동적 메모리 관리** 및 효율적인 자원 사용
 - ✅ **알고리즘 구현**을 통한 로직 훈련 (정렬 등)
-- ✅ **구조체(struct)** 기초 실습 (Point, Line 타입 정의)
-- 🔲 구조체 심화 및 파일 입출력
+- ✅ **구조체(struct) 기초** — `typedef struct`, Point / Line 타입 정의
+- ✅ **구조체 심화** — 패딩/바이트 정렬, `#pragma pack`, 구조체 포인터(`->`), 자기참조 구조체, 공용체(`union`), 열거형(`enum`)
+- ✅ **파일 입출력** — `fopen/fclose`, `fgetc/fputc`, `fread/fwrite`, `fscanf/fprintf`, 개방 모드, `fseek/rewind/feof`
+- ✅ **전처리 지시자** — `#define` 매크로 함수, 조건부 컴파일(`#ifdef`), 분할 컴파일, `extern/static`
+- ✅ **C++ 입문** — namespace, `cin/cout`, `wchar_t`
 - 🔲 C-ASM(어셈블리) 연동
 
 ---

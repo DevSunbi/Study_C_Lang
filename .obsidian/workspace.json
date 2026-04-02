@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "901524f29b49e4cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "10f54dd1660e176f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28f62a77709bfcf5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MD/Week2/Day 9/Day 9.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Day 9"
+            }
+          }
+        ]
+      },
+      {
+        "id": "36fa0ee6819cd0dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "afbad2f2115d6c9f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MD/Week2/Day 9/CodeBase.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CodeBase"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "50326911c4491789",
+    "type": "split",
+    "children": [
+      {
+        "id": "35d4ede0a03ea64f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "42b3bd0034965b8a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "06e8ddd4d6f60d20",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "3c991e0a032d720e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b10e754e0af726b8",
+    "type": "split",
+    "children": [
+      {
+        "id": "12a26bd2798967dd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b44f8085bf8622f4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MD/Week1/Day 1/CodeBase.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "CodeBase 의 백링크"
+            }
+          },
+          {
+            "id": "b3e993a448864310",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "MD/Week1/Day 1/Day 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Day 1 의 나가는 링크"
+            }
+          },
+          {
+            "id": "0d309332f33a87e9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "141f4c2bf92b1133",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
+            }
+          },
+          {
+            "id": "f8ce93c6426ced3f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MD/Week1/Day 1/Day 1.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Day 1 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
+    }
+  },
+  "active": "42b3bd0034965b8a",
+  "lastOpenFiles": [
+    "workspace/Week2/Day9CppApp/x64/Debug/ConsoleApplication2.pdb",
+    "workspace/Week2/Day9CppApp/x64/Debug/ConsoleApplication2.exe",
+    "workspace/Week2/Day9CppApp/x64/Debug",
+    "workspace/Week2/Day9CppApp/x64",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/microsoft/STL",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/microsoft",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/ConsoleA.1cc3642b_MD.tlog",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/ConsoleA.1cc3642b.tlog/link.write.1.tlog",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/ConsoleA.1cc3642b.tlog/link.secondary.1.tlog",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/ConsoleA.1cc3642b.tlog/link.read.1.tlog",
+    "workspace/Week2/Day9CppApp/ConsoleApplication2/x64/Debug/ConsoleA.1cc3642b.tlog/link.command.1.tlog",
+    "MD/Week2/Day 9/CodeBase.md",
+    "MD/Week2/Day 9/Day 9.md",
+    "MD/Week2/Day 8/CodeBase.md",
+    "MD/Week2/Day 9/QnA.md",
+    "MD/Week2/Day 8/Day 8.md",
+    "Pasted image 20260401115921.png",
+    "Pasted image 20260401115737.png",
+    "Pasted image 20260401115719.png",
+    "Pasted image 20260401104930.png",
+    "MD/Week2/Day 8/QnA.md",
+    "MD/Week2/Day 7/CodeBase.md",
+    "MD/Week2/Day 7/Day 7.md",
+    "MD/VEDA Study.md",
+    "Pasted image 20260331153311.png",
+    "Pasted image 20260331153230.png",
+    "Pasted image 20260331153222.png",
+    "Pasted image 20260331152501.png",
+    "Pasted image 20260331152433.png",
+    "Pasted image 20260331152356.png",
+    "MD/Week2/Day 6/Day 6.md",
+    "MD/Week2/Day 7/QnA.md",
+    "MD/Week2/Day 6/CodeBase.md",
+    "MD/Week1/Day 5/Day 5.md",
+    "README.md",
+    "MD/Week2/Day 6/QnA.md",
+    "MD/Week1/Day 1/Day 1.md",
+    "MD/Week1/Day 5/CodeBase.md",
+    "MD/Week1/Day 4/CodeBase.md",
+    "MD/Week1/Day 5/QnA.md",
+    "MD/Week1/Day 4/Day 4.md",
+    "MD/Week1/Day 3/Day 3.md",
+    "MD/Week1/Day 4/QnA.md",
+    "MD/Week1/Day 3/CodeBase.md",
+    "MD/Week1/Day 2/Day 2.md",
+    "MD/Week1/Day 1/CodeBase.md"
+  ]
+}

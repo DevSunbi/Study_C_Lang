@@ -9,14 +9,17 @@
 
 ```
 VEDA/
-├── workspace/          # 강의 실습 C 소스코드
+├── workspace/          # 강의 실습 C/C++ 소스코드
 │   ├── Week1/
 │   └── Week2/
 │       ├── Day6/
 │       ├── Day7/
-│       ├── Day8/           # 구조체 실습 (Point, Line)
-│       └── CPPSolution/
-│           └── Day8CppApp/ # C++ 기초 입출력 실습
+│       ├── Day8/               # 구조체 실습 (Point, Line)
+│       ├── CPPSolution/
+│       │   └── Day8CppApp/     # C++ 기초 입출력 실습
+│       └── Day9CppApp/         # C++ 참조자(Reference) & swap 실습
+│           └── ConsoleApplication2/
+│               └── ConsoleApplication2.cpp
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -33,7 +36,8 @@ VEDA/
 │   └── Week2/
 │       ├── Day 6/  → Day 6.md, CodeBase.md, QnA.md
 │       ├── Day 7/  → Day 7.md, CodeBase.md, QnA.md
-│       └── Day 8/  → Day 8.md, CodeBase.md, QnA.md
+│       ├── Day 8/  → Day 8.md, CodeBase.md, QnA.md
+│       └── Day 9/  → Day 9.md, CodeBase.md, QnA.md
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -59,6 +63,7 @@ VEDA/
 | **Week 1** | Day 1~5 | 기초 및 포인터 | 기초 문법, 함수, 배열, **포인터**(핵심), 아스키코드 |
 | **Week 2** | Day 6~7 | 심화 및 메모리 | 문자열 함수, 변수 영역(static 등), **이중 포인터**, **동적 할당**(malloc/free) |
 | **Week 2** | Day 8 | 구조체 & C++ 입출력 | `typedef struct` 정의, **Point / Line** 구조체 실습, C++ `cin/cout` 기초 |
+| **Week 2** | Day 9 | C++ 심화 & OOP 입문 | **레퍼런스(Reference)**, 동적할당(`new/delete`), 연산자 오버로딩, **예외처리**(try/catch/throw), **프로그래밍 패러다임**(절차적 → OOP) |
 
 ---
 
@@ -74,6 +79,9 @@ VEDA/
 - ✅ **파일 입출력** — `fopen/fclose`, `fgetc/fputc`, `fread/fwrite`, `fscanf/fprintf`, 개방 모드, `fseek/rewind/feof`
 - ✅ **전처리 지시자** — `#define` 매크로 함수, 조건부 컴파일(`#ifdef`), 분할 컴파일, `extern/static`
 - ✅ **C++ 입문** — namespace, `cin/cout`, `wchar_t`
+- ✅ **C++ 심화** — 레퍼런스(`&`), 동적할당(`new/delete`), 연산자 오버로딩, L-value/R-value, `static_cast` 등 형 변환
+- ✅ **예외 처리** — `try/catch/throw`, 스택 풀기, `noexcept`, `set_terminate`
+- ✅ **프로그래밍 패러다임** — 비구조적/절차적/객체지향 프로그래밍 개념 및 OOP 필요성
 - 🔲 C-ASM(어셈블리) 연동
 
 ---

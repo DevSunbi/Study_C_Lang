@@ -1,6 +1,6 @@
 ## HyperLink
 * [[MD/Week2/Day 8/CodeBase|CodeBase]]
-* [[QnA]]
+* [[MD/Week2/Day 8/QnA]]
 ---
 ## 사용자 정의 자료형
 #### 구조체

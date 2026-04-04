@@ -1,6 +1,6 @@
 ## HyperLink
-* [[QnA]]
-* [[CodeBase]]
+* [[MD/Week2/Day 9/QnA]]
+* [[MD/Week2/Day 9/CodeBase]]
 ---
 ## 데이터 형식
 #### 정수형 데이터 형식

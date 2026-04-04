@@ -17,9 +17,11 @@ VEDA/
 │       ├── Day8/               # 구조체 실습 (Point, Line)
 │       ├── CPPSolution/
 │       │   └── Day8CppApp/     # C++ 기초 입출력 실습
-│       └── Day9CppApp/         # C++ 참조자(Reference) & swap 실습
-│           └── ConsoleApplication2/
-│               └── ConsoleApplication2.cpp
+│       ├── Day9CppApp/         # C++ 참조자(Reference) & swap 실습
+│       │   └── ConsoleApplication2/
+│       │       └── ConsoleApplication2.cpp
+│       ├── Day10CppAppSolution/   # C++ 클래스 & 캡슐화 실습
+│       └── Day10CppApp2Solution/  # C++ 상속 & 다형성 실습
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -37,7 +39,8 @@ VEDA/
 │       ├── Day 6/  → Day 6.md, CodeBase.md, QnA.md
 │       ├── Day 7/  → Day 7.md, CodeBase.md, QnA.md
 │       ├── Day 8/  → Day 8.md, CodeBase.md, QnA.md
-│       └── Day 9/  → Day 9.md, CodeBase.md, QnA.md
+│       ├── Day 9/  → Day 9.md, CodeBase.md, QnA.md
+│       └── Day 10/ → Day 10.md, CodeBase.md, QnA.md
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -64,6 +67,7 @@ VEDA/
 | **Week 2** | Day 6~7 | 심화 및 메모리 | 문자열 함수, 변수 영역(static 등), **이중 포인터**, **동적 할당**(malloc/free) |
 | **Week 2** | Day 8 | 구조체 & C++ 입출력 | `typedef struct` 정의, **Point / Line** 구조체 실습, C++ `cin/cout` 기초 |
 | **Week 2** | Day 9 | C++ 심화 & OOP 입문 | **레퍼런스(Reference)**, 동적할당(`new/delete`), 연산자 오버로딩, **예외처리**(try/catch/throw), **프로그래밍 패러다임**(절차적 → OOP) |
+| **Week 2** | Day 10 | 객체지향 프로그래밍 | **클래스(class)** 설계, **캡슐화**(접근지정자/getter/setter), **추상화**, **상속**(Is-a/Has-a), **다형성**, UML 다이어그램, `this` 포인터 |
 
 ---
 
@@ -82,6 +86,14 @@ VEDA/
 - ✅ **C++ 심화** — 레퍼런스(`&`), 동적할당(`new/delete`), 연산자 오버로딩, L-value/R-value, `static_cast` 등 형 변환
 - ✅ **예외 처리** — `try/catch/throw`, 스택 풀기, `noexcept`, `set_terminate`
 - ✅ **프로그래밍 패러다임** — 비구조적/절차적/객체지향 프로그래밍 개념 및 OOP 필요성
+- ✅ **OOP 클래스 설계** — 클래스/인스턴스/객체 구분, 멤버 변수·함수, 생성자/소멸자, `this` 포인터
+- ✅ **캡슐화(Encapsulation)** — 접근 지정자(`public/private/protected`), getter/setter, 정보 은닉
+- ✅ **추상화(Abstraction)** — 공통 특성 추출, 불필요 요소 제거, 물리적·행위적 특성 분류
+- ✅ **상속(Inheritance)** — Is-a / Has-a 관계, 부모(Base)/자식(Derived) 클래스, 업캐스팅/다운캐스팅
+- ✅ **다형성(Polymorphism)** — 자식 객체가 부모 대체 가능, `virtual` 함수
+- ✅ **UML** — 클래스/객체/시퀀스/상태 다이어그램
+- 🔲 순수 가상함수 & 추상 클래스
+- 🔲 STL (vector, map, ...)
 - 🔲 C-ASM(어셈블리) 연동
 
 ---

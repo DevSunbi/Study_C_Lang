@@ -22,6 +22,8 @@ VEDA/
 │       │       └── ConsoleApplication2.cpp
 │       ├── Day10CppAppSolution/   # C++ 클래스 & 캡슐화 실습
 │       └── Day10CppApp2Solution/  # C++ 상속 & 다형성 실습
+│   └── Week3/
+│       └── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -41,6 +43,8 @@ VEDA/
 │       ├── Day 8/  → Day 8.md, CodeBase.md, QnA.md
 │       ├── Day 9/  → Day 9.md, CodeBase.md, QnA.md
 │       └── Day 10/ → Day 10.md, CodeBase.md, QnA.md
+│   └── Week3/
+│       └── Day 11/ → Day 11.md, CodeBase.md, QnA.md
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -68,6 +72,7 @@ VEDA/
 | **Week 2** | Day 8 | 구조체 & C++ 입출력 | `typedef struct` 정의, **Point / Line** 구조체 실습, C++ `cin/cout` 기초 |
 | **Week 2** | Day 9 | C++ 심화 & OOP 입문 | **레퍼런스(Reference)**, 동적할당(`new/delete`), 연산자 오버로딩, **예외처리**(try/catch/throw), **프로그래밍 패러다임**(절차적 → OOP) |
 | **Week 2** | Day 10 | 객체지향 프로그래밍 | **클래스(class)** 설계, **캡슐화**(접근지정자/getter/setter), **추상화**, **상속**(Is-a/Has-a), **다형성**, UML 다이어그램, `this` 포인터 |
+| **Week 3** | Day 11 | 상속과 다형성(C++) | **상속**(단일/다중), **다형성**, 오버라이딩, **가상 함수(`virtual`)**, 정적/동적 바인딩, 클래스 치환 |
 
 ---
 

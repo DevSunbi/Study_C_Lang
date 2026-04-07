@@ -16,7 +16,7 @@
 * 머리와 몸통으로 구성 (head-body)
 * 머리 : 선언부
 * 몸통 : 실행 코드
-```C
+```C title="main.c"
 int main(void) // head
 {
 	return 0; // body

@@ -23,7 +23,8 @@ VEDA/
 │       ├── Day10CppAppSolution/   # C++ 클래스 & 캡슐화 실습
 │       └── Day10CppApp2Solution/  # C++ 상속 & 다형성 실습
 │   └── Week3/
-│       └── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
+│       ├── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
+│       └── Day12CppAppSolution/   # C++ 복사 생성자, 정적 멤버 실습
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -44,7 +45,8 @@ VEDA/
 │       ├── Day 9/  → Day 9.md, CodeBase.md, QnA.md
 │       └── Day 10/ → Day 10.md, CodeBase.md, QnA.md
 │   └── Week3/
-│       └── Day 11/ → Day 11.md, CodeBase.md, QnA.md
+│       ├── Day 11/ → Day 11.md, CodeBase.md, QnA.md
+│       └── Day 12/ → Day 12.md, CodeBase.md, QnA.md
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -73,6 +75,7 @@ VEDA/
 | **Week 2** | Day 9 | C++ 심화 & OOP 입문 | **레퍼런스(Reference)**, 동적할당(`new/delete`), 연산자 오버로딩, **예외처리**(try/catch/throw), **프로그래밍 패러다임**(절차적 → OOP) |
 | **Week 2** | Day 10 | 객체지향 프로그래밍 | **클래스(class)** 설계, **캡슐화**(접근지정자/getter/setter), **추상화**, **상속**(Is-a/Has-a), **다형성**, UML 다이어그램, `this` 포인터 |
 | **Week 3** | Day 11 | 상속과 다형성(C++) | **상속**(단일/다중), **다형성**, 오버라이딩, **가상 함수(`virtual`)**, 정적/동적 바인딩, 클래스 치환 |
+| **Week 3** | Day 12 | 복사 생성자와 정적 멤버 | **복사 생성자(Copy Constructor)**, 얕은 복사/깊은 복사, **정적 멤버(`static`)**, 동적 할당 클래스 관리 |
 
 ---
 
@@ -96,6 +99,8 @@ VEDA/
 - ✅ **추상화(Abstraction)** — 공통 특성 추출, 불필요 요소 제거, 물리적·행위적 특성 분류
 - ✅ **상속(Inheritance)** — Is-a / Has-a 관계, 부모(Base)/자식(Derived) 클래스, 업캐스팅/다운캐스팅
 - ✅ **다형성(Polymorphism)** — 자식 객체가 부모 대체 가능, `virtual` 함수
+- ✅ **복사 생성자(Copy Constructor)** — 얕은 복사(Shallow) vs 깊은 복사(Deep)
+- ✅ **정적 멤버(Static)** — 클래스 전역 공유 변수 및 메서드
 - ✅ **UML** — 클래스/객체/시퀀스/상태 다이어그램
 - 🔲 순수 가상함수 & 추상 클래스
 - 🔲 STL (vector, map, ...)

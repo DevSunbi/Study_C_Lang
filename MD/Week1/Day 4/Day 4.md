@@ -52,4 +52,5 @@ int main(void) {
 	* Null terminated Character 이전까지 출력(garbage 출력 가능성 존재)
 * 배열에 값을 넣는다 -> 값을 복사하는 개념임(일반적인 요소는 깊은 복사, 포인터는 얕은 복사)
 	* 포인터/구조체는 주소만 복사 되므로, 실 내용 복사를 위해선 malloc을 사용함
+	* malloc만을 사용하는 것이 깊은 복사는 아님, malloc 후 strncpy, memcpy 수행 시 깊은 복사임
 ---

@@ -2,6 +2,20 @@
 *.exe
 *.o
 *.obj
+*.dll
+*.lib
+*.a
+*.so
 
 # Log files
 log.txt
+
+# Qt build directories
+build/
+**/build/
+
+# Qt generated files
+*.user
+moc_*
+ui_*
+qrc_*

@@ -11,20 +11,24 @@
 VEDA/
 ├── workspace/          # 강의 실습 C/C++ 소스코드
 │   ├── Week1/
-│   └── Week2/
-│       ├── Day6/
-│       ├── Day7/
-│       ├── Day8/               # 구조체 실습 (Point, Line)
-│       ├── CPPSolution/
-│       │   └── Day8CppApp/     # C++ 기초 입출력 실습
-│       ├── Day9CppApp/         # C++ 참조자(Reference) & swap 실습
-│       │   └── ConsoleApplication2/
-│       │       └── ConsoleApplication2.cpp
-│       ├── Day10CppAppSolution/   # C++ 클래스 & 캡슐화 실습
-│       └── Day10CppApp2Solution/  # C++ 상속 & 다형성 실습
-│   └── Week3/
-│       ├── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
-│       └── Day12CppAppSolution/   # C++ 복사 생성자, 정적 멤버 실습
+│   ├── Week2/
+│   │   ├── Day6/
+│   │   ├── Day7/
+│   │   ├── Day8/               # 구조체 실습 (Point, Line)
+│   │   ├── CPPSolution/
+│   │   │   └── Day8CppApp/     # C++ 기초 입출력 실습
+│   │   ├── Day9CppApp/         # C++ 참조자(Reference) & swap 실습
+│   │   │   └── ConsoleApplication2/
+│   │   │       └── ConsoleApplication2.cpp
+│   │   ├── Day10CppAppSolution/   # C++ 클래스 & 캡슐화 실습
+│   │   └── Day10CppApp2Solution/  # C++ 상속 & 다형성 실습
+│   ├── Week3/
+│   │   ├── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
+│   │   └── Day12CppAppSolution/   # C++ 복사 생성자, 정적 멤버 실습
+│   └── Week4/
+│       ├── Day16/               # Qt CMake/QMake 빌드, Widget 기초 실습
+│       ├── Day17/               # Qt CheckBox, ComboBox, Designer 활용 실습
+│       └── Day18/               # Qt Layout, Widgets, Container Class 실습
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -38,15 +42,21 @@ VEDA/
 │   │   ├── Day 3/  → Day 3.md, CodeBase.md, QnA.md
 │   │   ├── Day 4/  → Day 4.md, CodeBase.md, QnA.md
 │   │   └── Day 5/  → Day 5.md, CodeBase.md, QnA.md
-│   └── Week2/
-│       ├── Day 6/  → Day 6.md, CodeBase.md, QnA.md
-│       ├── Day 7/  → Day 7.md, CodeBase.md, QnA.md
-│       ├── Day 8/  → Day 8.md, CodeBase.md, QnA.md
-│       ├── Day 9/  → Day 9.md, CodeBase.md, QnA.md
-│       └── Day 10/ → Day 10.md, CodeBase.md, QnA.md
-│   └── Week3/
-│       ├── Day 11/ → Day 11.md, CodeBase.md, QnA.md
-│       └── Day 12/ → Day 12.md, CodeBase.md, QnA.md
+│   ├── Week2/
+│   │   ├── Day 6/  → Day 6.md, CodeBase.md, QnA.md
+│   │   ├── Day 7/  → Day 7.md, CodeBase.md, QnA.md
+│   │   ├── Day 8/  → Day 8.md, CodeBase.md, QnA.md
+│   │   ├── Day 9/  → Day 9.md, CodeBase.md, QnA.md
+│   │   └── Day 10/ → Day 10.md, CodeBase.md, QnA.md
+│   ├── Week3/
+│   │   ├── Day 11/ → Day 11.md, CodeBase.md, QnA.md
+│   │   ├── Day 12/ → Day 12.md, CodeBase.md, QnA.md
+│   │   ├── Day 13/ → Day 13.md, CodeBase.md
+│   │   └── Day 14/ → Day 14.md, CodeBase.md
+│   └── Week4/
+│       ├── Day 16/ → Day 16.md, CodeBase.md
+│       ├── Day 17/ → Day 17.md, CodeBase.md
+│       └── Day 18/ → Day 18.md
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -76,6 +86,11 @@ VEDA/
 | **Week 2** | Day 10 | 객체지향 프로그래밍 | **클래스(class)** 설계, **캡슐화**(접근지정자/getter/setter), **추상화**, **상속**(Is-a/Has-a), **다형성**, UML 다이어그램, `this` 포인터 |
 | **Week 3** | Day 11 | 상속과 다형성(C++) | **상속**(단일/다중), **다형성**, 오버라이딩, **가상 함수(`virtual`)**, 정적/동적 바인딩, 클래스 치환 |
 | **Week 3** | Day 12 | 복사 생성자와 정적 멤버 | **복사 생성자(Copy Constructor)**, 얕은 복사/깊은 복사, **정적 멤버(`static`)**, 동적 할당 클래스 관리 |
+| **Week 3** | Day 13 | 템플릿 & 표준 라이브러리 | **함수/클래스 템플릿**, 템플릿 특수화, `string` 표준 라이브러리, 파일 시스템, 난수(`mt19937`) |
+| **Week 3** | Day 14 | STL 컨테이너 & 알고리즘 | **Vector**, **List**, **Deque**, **Set**, **Map**, 반복자(iterator), 컨테이너 어댑터(Stack/Queue), STL 알고리즘 |
+| **Week 4** | Day 16 | Qt 입문 & 기초 | **Qt 아키텍처**(MVC), CMake/QMake 빌드, **QMainWindow**, 이벤트 처리, Signal/Slot |
+| **Week 4** | Day 17 | Qt 위젯 & 디자이너 | **QCheckBox**, **QComboBox**, Qt Designer 활용, connect 함수, resources 에셋 처리 |
+| **Week 4** | Day 18 | Qt 레이아웃 & 데이터 타입 | **Layout**(QHBox/QVBox/QGrid/QForm), **QString/QChar**, QVariant, QMap/QHash, QSet |
 
 ---
 
@@ -102,8 +117,15 @@ VEDA/
 - ✅ **복사 생성자(Copy Constructor)** — 얕은 복사(Shallow) vs 깊은 복사(Deep)
 - ✅ **정적 멤버(Static)** — 클래스 전역 공유 변수 및 메서드
 - ✅ **UML** — 클래스/객체/시퀀스/상태 다이어그램
+- ✅ **템플릿(Template)** — 함수/클래스 템플릿, 특수화, 인스턴스화, 중첩 클래스 템플릿
+- ✅ **표준 라이브러리(STL)** — `string`, `wstring`, 파일 시스템(`ifstream`), 난수(`mt19937`), 수학 함수(`cmath`)
+- ✅ **STL 컨테이너** — `vector`, `list`, `deque`, `array`, `set`, `map`, `multimap`, `stack`, `queue`
+- ✅ **반복자(Iterator)** — `begin/end`, `const_iterator`, `reverse_iterator`, 범위형 for
+- ✅ **Qt 프레임워크** — MVC 아키텍처, CMake/QMake 빌드, QMainWindow, Signal/Slot
+- ✅ **Qt 위젯** — QLabel, QPushButton, QCheckBox, QComboBox, QGroupBox, QLCDNumber, QTabWidget
+- ✅ **Qt 데이터 타입** — QString, QChar, QLatin1String, QVariant, QByteArray
+- ✅ **Qt 컨테이너** — QMap, QHash, QPair, QList, QSet
 - 🔲 순수 가상함수 & 추상 클래스
-- 🔲 STL (vector, map, ...)
 - 🔲 C-ASM(어셈블리) 연동
 
 ---
@@ -113,8 +135,8 @@ VEDA/
 | 항목 | 내용 |
 |------|------|
 | 언어 | C (C99/C11), C++ |
-| IDE | Visual Studio, VS Code |
-| 컴파일러 | MSVC (cl.exe), GCC / G++ |
+| IDE | Visual Studio, VS Code, Qt Creator |
+| 컴파일러 | MSVC (cl.exe), GCC / G++, Qt (MSVC/MinGW) |
 | OS | Windows |
 
 ---

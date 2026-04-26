@@ -25,15 +25,26 @@ VEDA/
 │   ├── Week3/
 │   │   ├── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
 │   │   └── Day12CppAppSolution/   # C++ 복사 생성자, 정적 멤버 실습
-│   └── Week4/
+│   ├── Week4/
 │       ├── Day16/               # Qt CMake/QMake 빌드, Widget 기초 실습
 │       ├── Day17/               # Qt CheckBox, ComboBox, Designer 활용 실습
-│       └── Day18/               # Qt Layout, Widgets, Container Class 실습
+│       ├── Day18/               # Qt Layout, Widgets, Container Class 실습
+│       └── Day19/               # Qt Dialog, Signal/Slot, QMainWindow 실습
+│   └── Week5/                   # ARM 어셈블리(ASM) 실습
+│       ├── basic_operators.s    # ARM 기초 연산 ASM
+│       ├── func_call.s          # ARM 함수 호출 ASM
+│       ├── is_multiple.s        # ARM 배수 판별 ASM
+│       ├── advanced_is_multiple.s
+│       ├── main.s               # ARM main 진입점 ASM
+│       └── example.c / main.cpp # C/C++ 크로스 개발 예시
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
 │   ├── Insertion_Sort.cpp
-│   └── practice_2751.c     # BOJ 2751: 버블/선택/삽입 정렬 비교
+│   ├── practice_2751.c     # BOJ 2751: 버블/선택/삽입 정렬 비교
+│   ├── binSearch.cpp        # 이진 탐색(Binary Search) 구현
+│   ├── boj1920.c            # BOJ 1920: 이진 탐색으로 수 찾기
+│   └── Search.md            # 탐색 알고리즘 정리 노트
 ├── MD/                     # 강의 노트 (Obsidian Markdown)
 │   ├── VEDA Study.md       # 전체 학습 목차
 │   ├── Week1/
@@ -53,10 +64,17 @@ VEDA/
 │   │   ├── Day 12/ → Day 12.md, CodeBase.md, QnA.md
 │   │   ├── Day 13/ → Day 13.md, CodeBase.md
 │   │   └── Day 14/ → Day 14.md, CodeBase.md
-│   └── Week4/
-│       ├── Day 16/ → Day 16.md, CodeBase.md
-│       ├── Day 17/ → Day 17.md, CodeBase.md
-│       └── Day 18/ → Day 18.md
+│   ├── Week4/
+│   │   ├── Day 16/ → Day 16.md, CodeBase.md
+│   │   ├── Day 17/ → Day 17.md, CodeBase.md
+│   │   ├── Day 18/ → Day 18.md
+│   │   ├── Day 19/ → Day 19.md  (Signal/Slot, Dialog)
+│   │   └── Day 20/ → Day 20.md  (QMainWindow, Model/View, QPainter)
+│   └── Week5/
+│       ├── Day 21/ → Day 21.md  (Thread Programming, Mutex, DeadLock)
+│       ├── Day 22/ → Day 22.md
+│       ├── Day 24/ → Day 24.md  (임베디드 기초, MCU, ARM, RISC/CISC)
+│       └── Day 25/ → Day 25.md  (크로스 개발환경, g++ options, ASM, Memory Map)
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -91,6 +109,12 @@ VEDA/
 | **Week 4** | Day 16 | Qt 입문 & 기초 | **Qt 아키텍처**(MVC), CMake/QMake 빌드, **QMainWindow**, 이벤트 처리, Signal/Slot |
 | **Week 4** | Day 17 | Qt 위젯 & 디자이너 | **QCheckBox**, **QComboBox**, Qt Designer 활용, connect 함수, resources 에셋 처리 |
 | **Week 4** | Day 18 | Qt 레이아웃 & 데이터 타입 | **Layout**(QHBox/QVBox/QGrid/QForm), **QString/QChar**, QVariant, QMap/QHash, QSet |
+| **Week 4** | Day 19 | Qt Signal/Slot 심화 & Dialog | **Signal/Slot** 심화, emit, **QDialog**(QInputDialog/QFileDialog/QMessageBox), Modal/Modeless |
+| **Week 4** | Day 20 | QMainWindow & Model/View & QPainter | **QMainWindow** 구조, Stream(Text/Data), **Model-View** 아키텍처, **QPainter** 2D 그래픽스 |
+| **Week 5** | Day 21 | Thread Programming | **멀티스레드** 개념, Thread Pool/Ready Pool, Race Condition, **Mutex**, **DeadLock** |
+| **Week 5** | Day 22 | Qt 계좌 관리 프로그램 | Qt 기반 계좌 관리 시스템 실습 |
+| **Week 5** | Day 24 | 임베디드 기초 & MCU HW | **임베디드 시스템** 개요, NTCR, MCU 구조, DMA/Timer/RTC/GPIO, **Register**, **인터럽트** |
+| **Week 5** | Day 25 | 크로스 개발환경 & ARM ASM | **크로스 컴파일**, g++ options, **ARM(RISC) vs CISC**, **Cortex-M4**, **Branch 명령어**, Memory Map |
 
 ---
 
@@ -125,8 +149,21 @@ VEDA/
 - ✅ **Qt 위젯** — QLabel, QPushButton, QCheckBox, QComboBox, QGroupBox, QLCDNumber, QTabWidget
 - ✅ **Qt 데이터 타입** — QString, QChar, QLatin1String, QVariant, QByteArray
 - ✅ **Qt 컨테이너** — QMap, QHash, QPair, QList, QSet
+- ✅ **Qt Signal/Slot 심화** — emit, Old/New Style connect, 시그널 전파
+- ✅ **Qt Dialog** — QInputDialog, QFileDialog, QMessageBox, Modal/Modeless
+- ✅ **Qt Model/View 아키텍처** — QAbstractItemModel, QStringListModel, QListView, Delegate
+- ✅ **Qt Stream & File I/O** — QTextStream, QDataStream, QFileDialog
+- ✅ **QPainter 2D 그래픽스** — paintEvent, QPainter begin/end, setPen, drawLine
+- ✅ **멀티스레드(Thread)** — Thread Pool, Race Condition, Mutex(lock/unlock), DeadLock 4조건
+- ✅ **임베디드 시스템 기초** — NTCR(Nature/Time/Constraint/Reliability), MCU 구조, firmware
+- ✅ **임베디드 HW** — DMA Controller, Timer, RTC, GPIO, Register(PC/LR/SP), 인터럽트 벡터
+- ✅ **크로스 개발환경** — PC(CISC) vs Embedded(ARM RISC), 크로스 컴파일 5단계(pre-process→hex)
+- ✅ **g++ 컴파일 옵션** — `-o`, `-c`, `-S`, `-std`, `-Werror/-Wall`, `-l <lib>`
+- ✅ **ARM 어셈블리(ASM)** — `.arm/.text/.global`, MOV/ADD/CMP/BEQ/BL/BX, Cortex-M4, Branch
+- ✅ **ARM 메모리 맵** — Code(ROM)/Data(RAM) 영역, Stack, 파이프라이닝(F-D-E-W)
+- ✅ **이진 탐색(Binary Search)** — 구현 및 BOJ 1920 적용 (GroupStudy)
 - 🔲 순수 가상함수 & 추상 클래스
-- 🔲 C-ASM(어셈블리) 연동
+- 🔲 RTOS / 임베디드 실전 프로젝트
 
 ---
 

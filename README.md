@@ -30,13 +30,19 @@ VEDA/
 │       ├── Day17/               # Qt CheckBox, ComboBox, Designer 활용 실습
 │       ├── Day18/               # Qt Layout, Widgets, Container Class 실습
 │       └── Day19/               # Qt Dialog, Signal/Slot, QMainWindow 실습
-│   └── Week5/                   # ARM 어셈블리(ASM) 실습
-│       ├── basic_operators.s    # ARM 기초 연산 ASM
-│       ├── func_call.s          # ARM 함수 호출 ASM
-│       ├── is_multiple.s        # ARM 배수 판별 ASM
-│       ├── advanced_is_multiple.s
-│       ├── main.s               # ARM main 진입점 ASM
-│       └── example.c / main.cpp # C/C++ 크로스 개발 예시
+│   ├── Week5/                   # ARM 어셈블리(ASM) 실습
+│   │   ├── basic_operators.s    # ARM 기초 연산 ASM
+│   │   ├── func_call.s          # ARM 함수 호출 ASM
+│   │   ├── is_multiple.s        # ARM 배수 판별 ASM
+│   │   ├── advanced_is_multiple.s
+│   │   ├── main.s               # ARM main 진입점 ASM
+│   │   └── example.c / main.cpp # C/C++ 크로스 개발 예시
+│   └── Week6/
+│       ├── Day26/               # STM32 LED 프로젝트 (HAL, CMSIS 드라이버)
+│       │   ├── STMLedProject/
+│       │   └── STMLedProject_2/
+│       └── Day27/               # Raspberry Pi GPIO 제어 (wiringPi, LED/버튼 실습)
+│           └── led.cpp
 ├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
 │   ├── bubble_sort.cpp
 │   ├── selection_sort.cpp
@@ -70,11 +76,17 @@ VEDA/
 │   │   ├── Day 18/ → Day 18.md
 │   │   ├── Day 19/ → Day 19.md  (Signal/Slot, Dialog)
 │   │   └── Day 20/ → Day 20.md  (QMainWindow, Model/View, QPainter)
-│   └── Week5/
-│       ├── Day 21/ → Day 21.md  (Thread Programming, Mutex, DeadLock)
-│       ├── Day 22/ → Day 22.md
-│       ├── Day 24/ → Day 24.md  (임베디드 기초, MCU, ARM, RISC/CISC)
-│       └── Day 25/ → Day 25.md  (크로스 개발환경, g++ options, ASM, Memory Map)
+│   ├── Week5/
+│   │   ├── Day 21/ → Day 21.md  (Thread Programming, Mutex, DeadLock)
+│   │   ├── Day 22/ → Day 22.md
+│   │   ├── Day 24/ → Day 24.md  (임베디드 기초, MCU, ARM, RISC/CISC)
+│   │   └── Day 25/ → Day 25.md  (크로스 개발환경, g++ options, ASM, Memory Map)
+│   ├── Protocol/               # 통신 프로토콜 정리 (UART, SPI, I2C, MCU, SoC, IMU 등)
+│   └── Week6/
+│       ├── Day26/ → Day26.md  (Protocol 비교, UART/SPI/I2C, STM32 Register/Memory Map)
+│       ├── Day27/ → Day27.md  (PullUp/PullDown, Raspberry Pi, 인터럽트 이론 & EXTI)
+│       ├── Day28/ → Day28.md  (OS 구조, Kernel, 리눅스 배포판, 터미널/셸 기초)
+│       └── Day29/ → Day29.md  (리눅스 명령어, 파일시스템, SoftLink/HardLink, 사용자/권한)
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -115,6 +127,10 @@ VEDA/
 | **Week 5** | Day 22 | Qt 계좌 관리 프로그램 | Qt 기반 계좌 관리 시스템 실습 |
 | **Week 5** | Day 24 | 임베디드 기초 & MCU HW | **임베디드 시스템** 개요, NTCR, MCU 구조, DMA/Timer/RTC/GPIO, **Register**, **인터럽트** |
 | **Week 5** | Day 25 | 크로스 개발환경 & ARM ASM | **크로스 컴파일**, g++ options, **ARM(RISC) vs CISC**, **Cortex-M4**, **Branch 명령어**, Memory Map |
+| **Week 6** | Day 26 | 통신 프로토콜 & STM32 기초 | **UART/SPI/I2C** 비교, VCC/GND/PullUp/PullDown, Rising/Falling Edge, STM32 Cortex-M4 Register & Memory Map, Nucleo401RE Pin Map |
+| **Week 6** | Day 27 | Raspberry Pi GPIO & 인터럽트 | PullUp/PullDown 회로, RPi4B pinout, **인터럽트** 동작원리, ISR, NVIC, **EXTI** 설정, wiringPi LED/Button 실습 |
+| **Week 6** | Day 28 | OS 구조 & 리눅스 기초 | **운영체제** 구조, Kernel/Device Driver/File System/Network System, 멀티태스킹, **리눅스 배포판**, 터미널/셸(Bash) |
+| **Week 6** | Day 29 | 리눅스 파일시스템 & 권한 관리 | ls/cd/nano/cp 명령어, 파일 종류, 루트 디렉터리, **SoftLink/HardLink**(inode/dentry), 사용자 계정(root/sudo), 파일 소유권/권한(chown) |
 
 ---
 
@@ -162,6 +178,15 @@ VEDA/
 - ✅ **ARM 어셈블리(ASM)** — `.arm/.text/.global`, MOV/ADD/CMP/BEQ/BL/BX, Cortex-M4, Branch
 - ✅ **ARM 메모리 맵** — Code(ROM)/Data(RAM) 영역, Stack, 파이프라이닝(F-D-E-W)
 - ✅ **이진 탐색(Binary Search)** — 구현 및 BOJ 1920 적용 (GroupStudy)
+- ✅ **통신 프로토콜** — UART(비동기/Start-Stop bit), SPI(SCLK/MOSI/MISO/SS), I2C(마스터/슬레이브/주소 기반), 프로토콜 비교표
+- ✅ **STM32 임베디드** — Cortex-M4 Register, STM32 Memory Map, Nucleo401RE Pin Map, HAL/CMSIS 드라이버 기반 LED 프로젝트
+- ✅ **인터럽트 심화** — 인터럽트 소스/컨트롤러(NVIC), ISR, 인터럽트 우선순위, Tail-Chaining, EXTI(External Interrupt), Masking/NMI
+- ✅ **Raspberry Pi GPIO** — wiringPi 라이브러리, PullUp/PullDown 회로, RPi4B pinout, LED/버튼 제어 실습
+- ✅ **운영체제(OS) 구조** — Kernel, Device Driver, File System, Network Stack, 프로세스/멀티태스킹, GUI/CLI
+- ✅ **리눅스 기초** — 배포판(Ubuntu/CentOS/RedHat), 터미널, Bash 셸, 기본 명령어(ls/cd/nano/cp)
+- ✅ **리눅스 파일시스템** — 파일 종류(일반/디렉/심링크/블록/문자/파이프/소켓), 루트 디렉터리 구조, Network FS, Pseudo FS
+- ✅ **SoftLink & HardLink** — inode, dentry, 데이터 블록, 소프트링크(심볼릭) vs 하드링크 비교
+- ✅ **리눅스 사용자/권한 관리** — root/시스템/일반 사용자, /etc/passwd, /etc/group, sudo/su/runuser, chown, 파일 권한(rwx/stickyBit)
 - 🔲 순수 가상함수 & 추상 클래스
 - 🔲 RTOS / 임베디드 실전 프로젝트
 

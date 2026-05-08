@@ -50,7 +50,12 @@ VEDA/
 │   ├── practice_2751.c     # BOJ 2751: 버블/선택/삽입 정렬 비교
 │   ├── binSearch.cpp        # 이진 탐색(Binary Search) 구현
 │   ├── boj1920.c            # BOJ 1920: 이진 탐색으로 수 찾기
-│   └── Search.md            # 탐색 알고리즘 정리 노트
+│   ├── Search.md            # 탐색 알고리즘 정리 노트
+│   ├── Ex0201.Recursion.cpp   # 재귀 함수 기초
+│   ├── Ex0202_RecursionSum.cpp # 재귀를 이용한 합계 계산
+│   ├── Ex0203_Fibonacci.cpp   # 피보나치 수열 (재귀)
+│   ├── Ex1001_ShellSort.cpp   # 셸 정렬(Shell Sort) 구현
+│   └── Ex1002_MergeSort.cpp   # 병합 정렬(Merge Sort) 구현
 ├── MD/                     # 강의 노트 (Obsidian Markdown)
 │   ├── VEDA Study.md       # 전체 학습 목차
 │   ├── Week1/
@@ -82,11 +87,15 @@ VEDA/
 │   │   ├── Day 24/ → Day 24.md  (임베디드 기초, MCU, ARM, RISC/CISC)
 │   │   └── Day 25/ → Day 25.md  (크로스 개발환경, g++ options, ASM, Memory Map)
 │   ├── Protocol/               # 통신 프로토콜 정리 (UART, SPI, I2C, MCU, SoC, IMU 등)
-│   └── Week6/
-│       ├── Day26/ → Day26.md  (Protocol 비교, UART/SPI/I2C, STM32 Register/Memory Map)
-│       ├── Day27/ → Day27.md  (PullUp/PullDown, Raspberry Pi, 인터럽트 이론 & EXTI)
-│       ├── Day28/ → Day28.md  (OS 구조, Kernel, 리눅스 배포판, 터미널/셸 기초)
-│       └── Day29/ → Day29.md  (리눅스 명령어, 파일시스템, SoftLink/HardLink, 사용자/권한)
+│   ├── Week6/
+│   │   ├── Day26/ → Day26.md  (Protocol 비교, UART/SPI/I2C, STM32 Register/Memory Map)
+│   │   ├── Day27/ → Day27.md  (PullUp/PullDown, Raspberry Pi, 인터럽트 이론 & EXTI)
+│   │   ├── Day28/ → Day28.md  (OS 구조, Kernel, 리눅스 배포판, 터미널/셸 기초)
+│   │   └── Day29/ → Day29.md  (리눅스 명령어, 파일시스템, SoftLink/HardLink, 사용자/권한)
+│   └── Week7/
+│       ├── Day30/ → Day30.md  (프로세스 관리, IPC, 시그널, Bash 조건문/반복문/함수/배열)
+│       ├── Day31/ → Day31.md  (Bash 확장, 리디렉션, 파이프라인, 필수 커맨드라인 툴)
+│       └── Day32/ → Day32.md  (패키지 관리, awk, systemd/systemctl, bashrc, alias)
 ├── .gitignore              # 바이너리 및 로그 제외 설정
 └── README.md
 ```
@@ -100,6 +109,12 @@ VEDA/
   - `Bubble Sort` (버블 정렬): 구현 및 테스트 완료.
   - `Selection Sort` (선택 정렬): 무한 루프 버그 수정 및 구현 완료.
   - `Insertion Sort` (삽입 정렬): 구현 및 테스트 완료.
+  - `Shell Sort` (셸 정렬): 삽입 정렬 개선, 간격(gap) 기반 부분 정렬 구현 (`Ex1001_ShellSort.cpp`)
+  - `Merge Sort` (병합 정렬): 분할 정복 기반 O(n log n) 정렬 구현 (`Ex1002_MergeSort.cpp`)
+- **재귀 함수 실습**
+  - 재귀 기초 (`Ex0201.Recursion.cpp`)
+  - 재귀를 이용한 합계 계산 (`Ex0202_RecursionSum.cpp`)
+  - 피보나치 수열 재귀 구현 (`Ex0203_Fibonacci.cpp`)
 - **BOJ 2751 풀이 (`practice_2751.c`)**
   - 버블/선택/삽입 정렬 3가지 방법으로 구현 비교 (C언어)
   - 시간복잡도 O(n²) — TLE 확인 및 알고리즘 한계 분석
@@ -131,6 +146,9 @@ VEDA/
 | **Week 6** | Day 27 | Raspberry Pi GPIO & 인터럽트 | PullUp/PullDown 회로, RPi4B pinout, **인터럽트** 동작원리, ISR, NVIC, **EXTI** 설정, wiringPi LED/Button 실습 |
 | **Week 6** | Day 28 | OS 구조 & 리눅스 기초 | **운영체제** 구조, Kernel/Device Driver/File System/Network System, 멀티태스킹, **리눅스 배포판**, 터미널/셸(Bash) |
 | **Week 6** | Day 29 | 리눅스 파일시스템 & 권한 관리 | ls/cd/nano/cp 명령어, 파일 종류, 루트 디렉터리, **SoftLink/HardLink**(inode/dentry), 사용자 계정(root/sudo), 파일 소유권/권한(chown) |
+| **Week 7** | Day 30 | 프로세스 관리 & Bash 기초 | **프로세스**(init/좀비/고아), **IPC**(파이프/메시지큐/소켓/공유메모리/세마포어), 시그널, Bash 변수/조건문/반복문/함수/배열 |
+| **Week 7** | Day 31 | Bash 심화 & 리디렉션 | Bash **확장**(중괄호/틸데/명령어치환/산술/패턴치환/대소문자), **리디렉션**(출력/입력/here-doc), **파이프라인**, 필수 커맨드라인 툴(grep/find/stat/wc/tar/tr) |
+| **Week 7** | Day 32 | 시스템 관리 & bashrc | **패키지 관리**(apt), **awk** 데이터 처리, **systemd** 유닛파일/서비스 타입, **systemctl** 명령어, **bashrc** 초기화 스크립트, alias 설정 |
 
 ---
 
@@ -187,6 +205,18 @@ VEDA/
 - ✅ **리눅스 파일시스템** — 파일 종류(일반/디렉/심링크/블록/문자/파이프/소켓), 루트 디렉터리 구조, Network FS, Pseudo FS
 - ✅ **SoftLink & HardLink** — inode, dentry, 데이터 블록, 소프트링크(심볼릭) vs 하드링크 비교
 - ✅ **리눅스 사용자/권한 관리** — root/시스템/일반 사용자, /etc/passwd, /etc/group, sudo/su/runuser, chown, 파일 권한(rwx/stickyBit)
+- ✅ **프로세스 관리** — 프로세스 생애주기, PCB, 컨텍스트 스위칭, 멀티태스킹/스케줄링, 좀비/고아 프로세스, 파일 디스크립터/표준 스트림
+- ✅ **IPC(프로세스 간 통신)** — 파이프(명명된 파이프 포함), 메시지 큐, 소켓, 공유 메모리, 세마포어(카운팅/바이너리/뮤텍스)
+- ✅ **시그널** — 시그널 개념, 시그널 이름/번호, SIGCHLD/SIGSTOP/SIGTERM/SIGKILL
+- ✅ **Bash 스크립트 기초** — 변수/할당/쿼팅, 산술연산(let/expr), 조건문(if-then-fi, case), 반복문(for/while/until), 함수, 배열(인덱스/연관)
+- ✅ **Bash 확장** — 중괄호 확장, 틸데 확장, 명령어 치환, 산술 확장, 서브스트링/패턴치환/대소문자 변환, 변수 값 조건 확장, 간접 확장, 패턴 제거
+- ✅ **리디렉션 & 파이프라인** — 출력/입력 리디렉션(`>`/`>>`/`<`), here documents/strings, 파이프라인(`|`/`|&`)
+- ✅ **필수 커맨드라인 툴** — grep, find, stat, wc, df, tar, read, tr, tail, head
+- ✅ **패키지 관리** — apt(install/remove/autoremove/list), awk(레코드 선택/패턴 매칭/데이터 처리)
+- ✅ **systemd & systemctl** — 데몬 프로세스, 유닛 파일(Unit/Service/Install 섹션), 서비스 타입, ExecStart/Restart, systemctl(start/stop/status/enable)
+- ✅ **bashrc & 셸 설정** — bashrc 초기화 스크립트, source 명령어, 환경변수/alias 설정, 셸 옵션(set/shopt)
+- ✅ **재귀 함수(Recursion)** — 재귀 기초, 재귀 합계, 피보나치 수열 (GroupStudy)
+- ✅ **고급 정렬 알고리즘** — Shell Sort(셸 정렬), Merge Sort(병합 정렬) 구현 (GroupStudy)
 - 🔲 순수 가상함수 & 추상 클래스
 - 🔲 RTOS / 임베디드 실전 프로젝트
 

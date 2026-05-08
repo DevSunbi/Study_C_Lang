@@ -1,224 +1,96 @@
-# 📚 C Language Study
+# 📚 VEDA C Language Study
 
-> C언어 학습 기록 저장소입니다.  
-> 강의 노트, 코드베이스, Q&A를 체계적으로 정리합니다.
+> C언어부터 임베디드 시스템, Linux까지 — VEDA 교육과정 학습 기록 저장소입니다.  
+> 브랜치별로 학습 단계가 분리되어 있습니다. 아래에서 원하는 주제를 선택하세요.
 
 ---
 
-## 🗂️ 저장소 구조
+## 🗺️ 브랜치 구조
 
 ```
-VEDA/
-├── workspace/          # 강의 실습 C/C++ 소스코드
-│   ├── Week1/
-│   ├── Week2/
-│   │   ├── Day6/
-│   │   ├── Day7/
-│   │   ├── Day8/               # 구조체 실습 (Point, Line)
-│   │   ├── CPPSolution/
-│   │   │   └── Day8CppApp/     # C++ 기초 입출력 실습
-│   │   ├── Day9CppApp/         # C++ 참조자(Reference) & swap 실습
-│   │   │   └── ConsoleApplication2/
-│   │   │       └── ConsoleApplication2.cpp
-│   │   ├── Day10CppAppSolution/   # C++ 클래스 & 캡슐화 실습
-│   │   └── Day10CppApp2Solution/  # C++ 상속 & 다형성 실습
-│   ├── Week3/
-│   │   ├── Day11CppAppSolution/   # C++ 상속, 다형성, 가상함수 실습
-│   │   └── Day12CppAppSolution/   # C++ 복사 생성자, 정적 멤버 실습
-│   ├── Week4/
-│       ├── Day16/               # Qt CMake/QMake 빌드, Widget 기초 실습
-│       ├── Day17/               # Qt CheckBox, ComboBox, Designer 활용 실습
-│       ├── Day18/               # Qt Layout, Widgets, Container Class 실습
-│       └── Day19/               # Qt Dialog, Signal/Slot, QMainWindow 실습
-│   ├── Week5/                   # ARM 어셈블리(ASM) 실습
-│   │   ├── basic_operators.s    # ARM 기초 연산 ASM
-│   │   ├── func_call.s          # ARM 함수 호출 ASM
-│   │   ├── is_multiple.s        # ARM 배수 판별 ASM
-│   │   ├── advanced_is_multiple.s
-│   │   ├── main.s               # ARM main 진입점 ASM
-│   │   └── example.c / main.cpp # C/C++ 크로스 개발 예시
-│   └── Week6/
-│       ├── Day26/               # STM32 LED 프로젝트 (HAL, CMSIS 드라이버)
-│       │   ├── STMLedProject/
-│       │   └── STMLedProject_2/
-│       └── Day27/               # Raspberry Pi GPIO 제어 (wiringPi, LED/버튼 실습)
-│           └── led.cpp
-├── GroupStudy/             # 그룹 스터디 (알고리즘 및 심화 주제)
-│   ├── bubble_sort.cpp
-│   ├── selection_sort.cpp
-│   ├── Insertion_Sort.cpp
-│   ├── practice_2751.c     # BOJ 2751: 버블/선택/삽입 정렬 비교
-│   ├── binSearch.cpp        # 이진 탐색(Binary Search) 구현
-│   ├── boj1920.c            # BOJ 1920: 이진 탐색으로 수 찾기
-│   ├── Search.md            # 탐색 알고리즘 정리 노트
-│   ├── Ex0201.Recursion.cpp   # 재귀 함수 기초
-│   ├── Ex0202_RecursionSum.cpp # 재귀를 이용한 합계 계산
-│   ├── Ex0203_Fibonacci.cpp   # 피보나치 수열 (재귀)
-│   ├── Ex1001_ShellSort.cpp   # 셸 정렬(Shell Sort) 구현
-│   └── Ex1002_MergeSort.cpp   # 병합 정렬(Merge Sort) 구현
-├── MD/                     # 강의 노트 (Obsidian Markdown)
-│   ├── VEDA Study.md       # 전체 학습 목차
-│   ├── Week1/
-│   │   ├── Day 1/  → Day 1.md, CodeBase.md, Intro(OT).md, QnA.md
-│   │   ├── Day 2/  → Day 2.md, CodeBase.md, QnA.md
-│   │   ├── Day 3/  → Day 3.md, CodeBase.md, QnA.md
-│   │   ├── Day 4/  → Day 4.md, CodeBase.md, QnA.md
-│   │   └── Day 5/  → Day 5.md, CodeBase.md, QnA.md
-│   ├── Week2/
-│   │   ├── Day 6/  → Day 6.md, CodeBase.md, QnA.md
-│   │   ├── Day 7/  → Day 7.md, CodeBase.md, QnA.md
-│   │   ├── Day 8/  → Day 8.md, CodeBase.md, QnA.md
-│   │   ├── Day 9/  → Day 9.md, CodeBase.md, QnA.md
-│   │   └── Day 10/ → Day 10.md, CodeBase.md, QnA.md
-│   ├── Week3/
-│   │   ├── Day 11/ → Day 11.md, CodeBase.md, QnA.md
-│   │   ├── Day 12/ → Day 12.md, CodeBase.md, QnA.md
-│   │   ├── Day 13/ → Day 13.md, CodeBase.md
-│   │   └── Day 14/ → Day 14.md, CodeBase.md
-│   ├── Week4/
-│   │   ├── Day 16/ → Day 16.md, CodeBase.md
-│   │   ├── Day 17/ → Day 17.md, CodeBase.md
-│   │   ├── Day 18/ → Day 18.md
-│   │   ├── Day 19/ → Day 19.md  (Signal/Slot, Dialog)
-│   │   └── Day 20/ → Day 20.md  (QMainWindow, Model/View, QPainter)
-│   ├── Week5/
-│   │   ├── Day 21/ → Day 21.md  (Thread Programming, Mutex, DeadLock)
-│   │   ├── Day 22/ → Day 22.md
-│   │   ├── Day 24/ → Day 24.md  (임베디드 기초, MCU, ARM, RISC/CISC)
-│   │   └── Day 25/ → Day 25.md  (크로스 개발환경, g++ options, ASM, Memory Map)
-│   ├── Protocol/               # 통신 프로토콜 정리 (UART, SPI, I2C, MCU, SoC, IMU 등)
-│   ├── Week6/
-│   │   ├── Day26/ → Day26.md  (Protocol 비교, UART/SPI/I2C, STM32 Register/Memory Map)
-│   │   ├── Day27/ → Day27.md  (PullUp/PullDown, Raspberry Pi, 인터럽트 이론 & EXTI)
-│   │   ├── Day28/ → Day28.md  (OS 구조, Kernel, 리눅스 배포판, 터미널/셸 기초)
-│   │   └── Day29/ → Day29.md  (리눅스 명령어, 파일시스템, SoftLink/HardLink, 사용자/권한)
-│   └── Week7/
-│       ├── Day30/ → Day30.md  (프로세스 관리, IPC, 시그널, Bash 조건문/반복문/함수/배열)
-│       ├── Day31/ → Day31.md  (Bash 확장, 리디렉션, 파이프라인, 필수 커맨드라인 툴)
-│       └── Day32/ → Day32.md  (패키지 관리, awk, systemd/systemctl, bashrc, alias)
-├── .gitignore              # 바이너리 및 로그 제외 설정
-└── README.md
+main (현재)         ← 전체 안내 허브
+├── stage/c-cpp     ← C / C++ 기초~OOP 심화
+├── stage/qt        ← Qt 프레임워크
+├── stage/embedded  ← 임베디드 시스템 (ARM/STM32/RPi)
+├── stage/linux     ← Linux & Bash 시스템 프로그래밍
+└── group-study     ← 알고리즘 그룹 스터디
 ```
 
 ---
 
-## 📅 학습 및 활동 내용
+## 🔀 브랜치별 학습 내용
 
-### 🛡️ Group Study: 알고리즘
-- **정렬 알고리즘 구현 (C++)**
-  - `Bubble Sort` (버블 정렬): 구현 및 테스트 완료.
-  - `Selection Sort` (선택 정렬): 무한 루프 버그 수정 및 구현 완료.
-  - `Insertion Sort` (삽입 정렬): 구현 및 테스트 완료.
-  - `Shell Sort` (셸 정렬): 삽입 정렬 개선, 간격(gap) 기반 부분 정렬 구현 (`Ex1001_ShellSort.cpp`)
-  - `Merge Sort` (병합 정렬): 분할 정복 기반 O(n log n) 정렬 구현 (`Ex1002_MergeSort.cpp`)
-- **재귀 함수 실습**
-  - 재귀 기초 (`Ex0201.Recursion.cpp`)
-  - 재귀를 이용한 합계 계산 (`Ex0202_RecursionSum.cpp`)
-  - 피보나치 수열 재귀 구현 (`Ex0203_Fibonacci.cpp`)
-- **BOJ 2751 풀이 (`practice_2751.c`)**
-  - 버블/선택/삽입 정렬 3가지 방법으로 구현 비교 (C언어)
-  - 시간복잡도 O(n²) — TLE 확인 및 알고리즘 한계 분석
-- **기타**
-  - C++ 환경에서의 빌드 및 실행 테스트 (`g++` 사용)
+### 🔵 [stage/c-cpp](../../tree/stage/c-cpp) — C / C++ 기초~OOP 심화
+> **Week 1 ~ Week 3** | 강의 노트 + 실습 코드
 
-### ✅ 강의 커리큘럼
-| 주차 | 일차 | 주제 | 핵심 내용 |
-|-----|------|------|-----------|
-| **Week 1** | Day 1~5 | 기초 및 포인터 | 기초 문법, 함수, 배열, **포인터**(핵심), 아스키코드 |
-| **Week 2** | Day 6~7 | 심화 및 메모리 | 문자열 함수, 변수 영역(static 등), **이중 포인터**, **동적 할당**(malloc/free) |
-| **Week 2** | Day 8 | 구조체 & C++ 입출력 | `typedef struct` 정의, **Point / Line** 구조체 실습, C++ `cin/cout` 기초 |
-| **Week 2** | Day 9 | C++ 심화 & OOP 입문 | **레퍼런스(Reference)**, 동적할당(`new/delete`), 연산자 오버로딩, **예외처리**(try/catch/throw), **프로그래밍 패러다임**(절차적 → OOP) |
-| **Week 2** | Day 10 | 객체지향 프로그래밍 | **클래스(class)** 설계, **캡슐화**(접근지정자/getter/setter), **추상화**, **상속**(Is-a/Has-a), **다형성**, UML 다이어그램, `this` 포인터 |
-| **Week 3** | Day 11 | 상속과 다형성(C++) | **상속**(단일/다중), **다형성**, 오버라이딩, **가상 함수(`virtual`)**, 정적/동적 바인딩, 클래스 치환 |
-| **Week 3** | Day 12 | 복사 생성자와 정적 멤버 | **복사 생성자(Copy Constructor)**, 얕은 복사/깊은 복사, **정적 멤버(`static`)**, 동적 할당 클래스 관리 |
-| **Week 3** | Day 13 | 템플릿 & 표준 라이브러리 | **함수/클래스 템플릿**, 템플릿 특수화, `string` 표준 라이브러리, 파일 시스템, 난수(`mt19937`) |
-| **Week 3** | Day 14 | STL 컨테이너 & 알고리즘 | **Vector**, **List**, **Deque**, **Set**, **Map**, 반복자(iterator), 컨테이너 어댑터(Stack/Queue), STL 알고리즘 |
-| **Week 4** | Day 16 | Qt 입문 & 기초 | **Qt 아키텍처**(MVC), CMake/QMake 빌드, **QMainWindow**, 이벤트 처리, Signal/Slot |
-| **Week 4** | Day 17 | Qt 위젯 & 디자이너 | **QCheckBox**, **QComboBox**, Qt Designer 활용, connect 함수, resources 에셋 처리 |
-| **Week 4** | Day 18 | Qt 레이아웃 & 데이터 타입 | **Layout**(QHBox/QVBox/QGrid/QForm), **QString/QChar**, QVariant, QMap/QHash, QSet |
-| **Week 4** | Day 19 | Qt Signal/Slot 심화 & Dialog | **Signal/Slot** 심화, emit, **QDialog**(QInputDialog/QFileDialog/QMessageBox), Modal/Modeless |
-| **Week 4** | Day 20 | QMainWindow & Model/View & QPainter | **QMainWindow** 구조, Stream(Text/Data), **Model-View** 아키텍처, **QPainter** 2D 그래픽스 |
-| **Week 5** | Day 21 | Thread Programming | **멀티스레드** 개념, Thread Pool/Ready Pool, Race Condition, **Mutex**, **DeadLock** |
-| **Week 5** | Day 22 | Qt 계좌 관리 프로그램 | Qt 기반 계좌 관리 시스템 실습 |
-| **Week 5** | Day 24 | 임베디드 기초 & MCU HW | **임베디드 시스템** 개요, NTCR, MCU 구조, DMA/Timer/RTC/GPIO, **Register**, **인터럽트** |
-| **Week 5** | Day 25 | 크로스 개발환경 & ARM ASM | **크로스 컴파일**, g++ options, **ARM(RISC) vs CISC**, **Cortex-M4**, **Branch 명령어**, Memory Map |
-| **Week 6** | Day 26 | 통신 프로토콜 & STM32 기초 | **UART/SPI/I2C** 비교, VCC/GND/PullUp/PullDown, Rising/Falling Edge, STM32 Cortex-M4 Register & Memory Map, Nucleo401RE Pin Map |
-| **Week 6** | Day 27 | Raspberry Pi GPIO & 인터럽트 | PullUp/PullDown 회로, RPi4B pinout, **인터럽트** 동작원리, ISR, NVIC, **EXTI** 설정, wiringPi LED/Button 실습 |
-| **Week 6** | Day 28 | OS 구조 & 리눅스 기초 | **운영체제** 구조, Kernel/Device Driver/File System/Network System, 멀티태스킹, **리눅스 배포판**, 터미널/셸(Bash) |
-| **Week 6** | Day 29 | 리눅스 파일시스템 & 권한 관리 | ls/cd/nano/cp 명령어, 파일 종류, 루트 디렉터리, **SoftLink/HardLink**(inode/dentry), 사용자 계정(root/sudo), 파일 소유권/권한(chown) |
-| **Week 7** | Day 30 | 프로세스 관리 & Bash 기초 | **프로세스**(init/좀비/고아), **IPC**(파이프/메시지큐/소켓/공유메모리/세마포어), 시그널, Bash 변수/조건문/반복문/함수/배열 |
-| **Week 7** | Day 31 | Bash 심화 & 리디렉션 | Bash **확장**(중괄호/틸데/명령어치환/산술/패턴치환/대소문자), **리디렉션**(출력/입력/here-doc), **파이프라인**, 필수 커맨드라인 툴(grep/find/stat/wc/tar/tr) |
-| **Week 7** | Day 32 | 시스템 관리 & bashrc | **패키지 관리**(apt), **awk** 데이터 처리, **systemd** 유닛파일/서비스 타입, **systemctl** 명령어, **bashrc** 초기화 스크립트, alias 설정 |
+| 핵심 주제 |
+|-----------|
+| C 기초 문법, 함수, 배열, **포인터**, 동적 메모리 관리 |
+| 구조체(`typedef struct`), 공용체, 열거형, 파일 입출력 |
+| C++ 레퍼런스, 예외처리, **OOP** (클래스/상속/다형성/가상함수) |
+| 복사 생성자, 정적 멤버, **템플릿(Template)**, **STL 컨테이너** |
 
 ---
 
-## 🔑 핵심 학습 목표
+### 🟣 [stage/qt](../../tree/stage/qt) — Qt 프레임워크
+> **Week 4** | 강의 노트 + 실습 코드
 
-- ✅ C언어 문법 기초 및 입출력
-- ✅ 함수 설계 및 다차원 배열 활용
-- ✅ **포인터 및 메모리 구조 이해** (변수, 배열, 함수 포인터 등)
-- ✅ **동적 메모리 관리** 및 효율적인 자원 사용
-- ✅ **알고리즘 구현**을 통한 로직 훈련 (정렬 등)
-- ✅ **구조체(struct) 기초** — `typedef struct`, Point / Line 타입 정의
-- ✅ **구조체 심화** — 패딩/바이트 정렬, `#pragma pack`, 구조체 포인터(`->`), 자기참조 구조체, 공용체(`union`), 열거형(`enum`)
-- ✅ **파일 입출력** — `fopen/fclose`, `fgetc/fputc`, `fread/fwrite`, `fscanf/fprintf`, 개방 모드, `fseek/rewind/feof`
-- ✅ **전처리 지시자** — `#define` 매크로 함수, 조건부 컴파일(`#ifdef`), 분할 컴파일, `extern/static`
-- ✅ **C++ 입문** — namespace, `cin/cout`, `wchar_t`
-- ✅ **C++ 심화** — 레퍼런스(`&`), 동적할당(`new/delete`), 연산자 오버로딩, L-value/R-value, `static_cast` 등 형 변환
-- ✅ **예외 처리** — `try/catch/throw`, 스택 풀기, `noexcept`, `set_terminate`
-- ✅ **프로그래밍 패러다임** — 비구조적/절차적/객체지향 프로그래밍 개념 및 OOP 필요성
-- ✅ **OOP 클래스 설계** — 클래스/인스턴스/객체 구분, 멤버 변수·함수, 생성자/소멸자, `this` 포인터
-- ✅ **캡슐화(Encapsulation)** — 접근 지정자(`public/private/protected`), getter/setter, 정보 은닉
-- ✅ **추상화(Abstraction)** — 공통 특성 추출, 불필요 요소 제거, 물리적·행위적 특성 분류
-- ✅ **상속(Inheritance)** — Is-a / Has-a 관계, 부모(Base)/자식(Derived) 클래스, 업캐스팅/다운캐스팅
-- ✅ **다형성(Polymorphism)** — 자식 객체가 부모 대체 가능, `virtual` 함수
-- ✅ **복사 생성자(Copy Constructor)** — 얕은 복사(Shallow) vs 깊은 복사(Deep)
-- ✅ **정적 멤버(Static)** — 클래스 전역 공유 변수 및 메서드
-- ✅ **UML** — 클래스/객체/시퀀스/상태 다이어그램
-- ✅ **템플릿(Template)** — 함수/클래스 템플릿, 특수화, 인스턴스화, 중첩 클래스 템플릿
-- ✅ **표준 라이브러리(STL)** — `string`, `wstring`, 파일 시스템(`ifstream`), 난수(`mt19937`), 수학 함수(`cmath`)
-- ✅ **STL 컨테이너** — `vector`, `list`, `deque`, `array`, `set`, `map`, `multimap`, `stack`, `queue`
-- ✅ **반복자(Iterator)** — `begin/end`, `const_iterator`, `reverse_iterator`, 범위형 for
-- ✅ **Qt 프레임워크** — MVC 아키텍처, CMake/QMake 빌드, QMainWindow, Signal/Slot
-- ✅ **Qt 위젯** — QLabel, QPushButton, QCheckBox, QComboBox, QGroupBox, QLCDNumber, QTabWidget
-- ✅ **Qt 데이터 타입** — QString, QChar, QLatin1String, QVariant, QByteArray
-- ✅ **Qt 컨테이너** — QMap, QHash, QPair, QList, QSet
-- ✅ **Qt Signal/Slot 심화** — emit, Old/New Style connect, 시그널 전파
-- ✅ **Qt Dialog** — QInputDialog, QFileDialog, QMessageBox, Modal/Modeless
-- ✅ **Qt Model/View 아키텍처** — QAbstractItemModel, QStringListModel, QListView, Delegate
-- ✅ **Qt Stream & File I/O** — QTextStream, QDataStream, QFileDialog
-- ✅ **QPainter 2D 그래픽스** — paintEvent, QPainter begin/end, setPen, drawLine
-- ✅ **멀티스레드(Thread)** — Thread Pool, Race Condition, Mutex(lock/unlock), DeadLock 4조건
-- ✅ **임베디드 시스템 기초** — NTCR(Nature/Time/Constraint/Reliability), MCU 구조, firmware
-- ✅ **임베디드 HW** — DMA Controller, Timer, RTC, GPIO, Register(PC/LR/SP), 인터럽트 벡터
-- ✅ **크로스 개발환경** — PC(CISC) vs Embedded(ARM RISC), 크로스 컴파일 5단계(pre-process→hex)
-- ✅ **g++ 컴파일 옵션** — `-o`, `-c`, `-S`, `-std`, `-Werror/-Wall`, `-l <lib>`
-- ✅ **ARM 어셈블리(ASM)** — `.arm/.text/.global`, MOV/ADD/CMP/BEQ/BL/BX, Cortex-M4, Branch
-- ✅ **ARM 메모리 맵** — Code(ROM)/Data(RAM) 영역, Stack, 파이프라이닝(F-D-E-W)
-- ✅ **이진 탐색(Binary Search)** — 구현 및 BOJ 1920 적용 (GroupStudy)
-- ✅ **통신 프로토콜** — UART(비동기/Start-Stop bit), SPI(SCLK/MOSI/MISO/SS), I2C(마스터/슬레이브/주소 기반), 프로토콜 비교표
-- ✅ **STM32 임베디드** — Cortex-M4 Register, STM32 Memory Map, Nucleo401RE Pin Map, HAL/CMSIS 드라이버 기반 LED 프로젝트
-- ✅ **인터럽트 심화** — 인터럽트 소스/컨트롤러(NVIC), ISR, 인터럽트 우선순위, Tail-Chaining, EXTI(External Interrupt), Masking/NMI
-- ✅ **Raspberry Pi GPIO** — wiringPi 라이브러리, PullUp/PullDown 회로, RPi4B pinout, LED/버튼 제어 실습
-- ✅ **운영체제(OS) 구조** — Kernel, Device Driver, File System, Network Stack, 프로세스/멀티태스킹, GUI/CLI
-- ✅ **리눅스 기초** — 배포판(Ubuntu/CentOS/RedHat), 터미널, Bash 셸, 기본 명령어(ls/cd/nano/cp)
-- ✅ **리눅스 파일시스템** — 파일 종류(일반/디렉/심링크/블록/문자/파이프/소켓), 루트 디렉터리 구조, Network FS, Pseudo FS
-- ✅ **SoftLink & HardLink** — inode, dentry, 데이터 블록, 소프트링크(심볼릭) vs 하드링크 비교
-- ✅ **리눅스 사용자/권한 관리** — root/시스템/일반 사용자, /etc/passwd, /etc/group, sudo/su/runuser, chown, 파일 권한(rwx/stickyBit)
-- ✅ **프로세스 관리** — 프로세스 생애주기, PCB, 컨텍스트 스위칭, 멀티태스킹/스케줄링, 좀비/고아 프로세스, 파일 디스크립터/표준 스트림
-- ✅ **IPC(프로세스 간 통신)** — 파이프(명명된 파이프 포함), 메시지 큐, 소켓, 공유 메모리, 세마포어(카운팅/바이너리/뮤텍스)
-- ✅ **시그널** — 시그널 개념, 시그널 이름/번호, SIGCHLD/SIGSTOP/SIGTERM/SIGKILL
-- ✅ **Bash 스크립트 기초** — 변수/할당/쿼팅, 산술연산(let/expr), 조건문(if-then-fi, case), 반복문(for/while/until), 함수, 배열(인덱스/연관)
-- ✅ **Bash 확장** — 중괄호 확장, 틸데 확장, 명령어 치환, 산술 확장, 서브스트링/패턴치환/대소문자 변환, 변수 값 조건 확장, 간접 확장, 패턴 제거
-- ✅ **리디렉션 & 파이프라인** — 출력/입력 리디렉션(`>`/`>>`/`<`), here documents/strings, 파이프라인(`|`/`|&`)
-- ✅ **필수 커맨드라인 툴** — grep, find, stat, wc, df, tar, read, tr, tail, head
-- ✅ **패키지 관리** — apt(install/remove/autoremove/list), awk(레코드 선택/패턴 매칭/데이터 처리)
-- ✅ **systemd & systemctl** — 데몬 프로세스, 유닛 파일(Unit/Service/Install 섹션), 서비스 타입, ExecStart/Restart, systemctl(start/stop/status/enable)
-- ✅ **bashrc & 셸 설정** — bashrc 초기화 스크립트, source 명령어, 환경변수/alias 설정, 셸 옵션(set/shopt)
-- ✅ **재귀 함수(Recursion)** — 재귀 기초, 재귀 합계, 피보나치 수열 (GroupStudy)
-- ✅ **고급 정렬 알고리즘** — Shell Sort(셸 정렬), Merge Sort(병합 정렬) 구현 (GroupStudy)
-- 🔲 순수 가상함수 & 추상 클래스
-- 🔲 RTOS / 임베디드 실전 프로젝트
+| 핵심 주제 |
+|-----------|
+| Qt 아키텍처(MVC), CMake/QMake 빌드, **QMainWindow** |
+| QCheckBox, QComboBox, Qt Designer, **Signal/Slot** |
+| Layout, QString, QVariant, QMap/QHash |
+| **QDialog**, **Model-View 아키텍처**, **QPainter** 2D 그래픽스 |
+
+---
+
+### 🟠 [stage/embedded](../../tree/stage/embedded) — 임베디드 시스템
+> **Week 5 ~ Week 6 (Day26~27)** + **Protocol/** | 강의 노트 + 실습 코드
+
+| 핵심 주제 |
+|-----------|
+| **멀티스레드**, Mutex, DeadLock, Race Condition |
+| **ARM 어셈블리(ASM)**, Cortex-M4, 크로스 컴파일 환경 |
+| MCU 구조, DMA/Timer/GPIO, **인터럽트**(NVIC/ISR/EXTI) |
+| **UART/SPI/I2C** 통신 프로토콜, STM32 HAL/CMSIS |
+| Raspberry Pi GPIO, wiringPi LED/버튼 제어 |
+
+---
+
+### 🟢 [stage/linux](../../tree/stage/linux) — Linux & Bash 시스템 프로그래밍
+> **Week 6 (Day28~29) + Week 7** | 강의 노트 (실습 코드: MD 내 코드블록)
+
+| 핵심 주제 |
+|-----------|
+| 운영체제 구조, Kernel, 리눅스 배포판, 파일시스템 |
+| SoftLink/HardLink(inode), 사용자/권한 관리(chmod/chown) |
+| **프로세스 관리**, PCB, IPC(파이프/소켓/공유메모리/세마포어) |
+| **Bash 스크립팅** (변수/조건문/반복문/함수/확장/리디렉션/파이프라인) |
+| **systemd**, systemctl, bashrc, alias, CLI 툴(grep/find/awk) |
+
+---
+
+### 🔴 [group-study](../../tree/group-study) — 알고리즘 그룹 스터디
+> 교육과정 外 알고리즘 스터디 | C/C++ 구현 코드
+
+| 분류 | 내용 |
+|------|------|
+| **정렬** | 버블/선택/삽입/셸(Shell)/병합(Merge) 정렬 |
+| **탐색** | 이진 탐색 (Binary Search), BOJ 1920 |
+| **재귀** | 재귀 기초, 합계 계산, 피보나치 수열 |
+| **BOJ** | 2751 (정렬 비교 TLE 분석), 1920 (이진 탐색) |
+
+---
+
+## 📅 전체 커리큘럼 개요
+
+| 단계 | 주차 | 내용 | 브랜치 |
+|------|------|------|--------|
+| 1️⃣ | Week 1~3 | C 기초 → C++ OOP 심화 | `stage/c-cpp` |
+| 2️⃣ | Week 4 | Qt 프레임워크 | `stage/qt` |
+| 3️⃣ | Week 5~6 | 임베디드 시스템 & ARM | `stage/embedded` |
+| 4️⃣ | Week 6~7 | Linux & Bash | `stage/linux` |
+| ➕ | - | 알고리즘 그룹 스터디 | `group-study` |
 
 ---
 
@@ -226,17 +98,17 @@ VEDA/
 
 | 항목 | 내용 |
 |------|------|
-| 언어 | C (C99/C11), C++ |
-| IDE | Visual Studio, VS Code, Qt Creator |
-| 컴파일러 | MSVC (cl.exe), GCC / G++, Qt (MSVC/MinGW) |
-| OS | Windows |
+| 언어 | C (C99/C11), C++, Bash |
+| IDE | Visual Studio, VS Code, Qt Creator, STM32CubeIDE |
+| 컴파일러 | MSVC (cl.exe), GCC/G++, Qt (MSVC/MinGW), arm-none-eabi-gcc |
+| 플랫폼 | Windows, Linux (WSL2), STM32 Nucleo401RE, Raspberry Pi 4B |
 
 ---
 
 ## 👤 Author
 
-- **분야**: C언어 시스템 프로그래밍 / 알고리즘
-- **목표**: 하드웨어 제어부터 메모리 최적화까지 가능한 시스템 전문가
+- **분야**: C언어 시스템 프로그래밍 / 임베디드 / 알고리즘
+- **목표**: 하드웨어 제어부터 시스템 프로그래밍까지 가능한 시스템 전문가
 
 ---
 

@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\Sunbi\source\repos\Day6\main.c(8,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  Day6.vcxproj -> C:\Users\Sunbi\source\repos\Day6\x64\Debug\Day6.exe

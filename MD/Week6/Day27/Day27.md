@@ -1,4 +1,4 @@
-#### Pullup / PullDown
+ #### Pullup / PullDown
 ![[Pasted image 20260428091358.png]]
 * Pull up -> 스위치 열린 상태에서는 Input이 1(High)
 	* 스위치가 닫힌 상태에선 GND로 전류가 흐름 -> input이 0(Low)

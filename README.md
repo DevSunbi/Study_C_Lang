@@ -70,8 +70,8 @@ main (현재)         ← 전체 안내 허브
 
 ---
 
-### 🔷 Week 8 — GCC 빌드 시스템 & Linux 시스템 프로그래밍
-> **Day34, Day36, Day37** | 강의 노트 + 실습 코드
+### 🔷 [stage/linux-sys](../../tree/stage/linux-sys) — Linux 시스템 프로그래밍 심화
+> **Week 8~9 (Day34, 36, 37, 38)** | 강의 노트 + 실습 코드
 
 | 핵심 주제 |
 |-----------|
@@ -80,23 +80,10 @@ main (현재)         ← 전체 안내 허브
 | **GDB** 디버거 — break/watch/step/backtrace, core 파일 분석 |
 | **CMake** 빌드 시스템 — 타깃 기반 모던 CMake, find_package |
 | **Docker** 컨테이너 — 이미지/컨테이너 구조, Dockerfile, 아키텍처 |
-| **Git** 분산 버전 관리 — 커밋/브랜치/PR 워크플로우 |
-| **Linux 시스템 프로그래밍** — 커널 시스템 콜, errno, 환경변수 |
-| **My Shell 구현** — fork/exec/wait, 리다이렉트/파이프 |
-
----
-
-### 🔶 Week 9 — 리눅스 파일시스템 & 프로세스 제어
-> **Day38** | 강의 노트 + 실습 코드
-
-| 핵심 주제 |
-|-----------|
-| **저수준 파일 I/O** — open/read/write/lseek, 파일 디스크립터 |
-| **터미널 제어** — ioctl, termio 구조체, Canonical/Non-Canonical 모드 |
-| **파일 중첩** — dup/dup2, 파이프·소켓 응용 |
-| **디렉토리 제어** — opendir/readdir/mkdir/chdir/getcwd |
-| **프로세스** — 프로세스 구조, task_struct, context/image |
-| **프로세스 생성/종료** — fork/system/wait/waitpid/exit, 좀비 프로세스 |
+| **Linux 시스템 콜** — errno, 환경변수, My Shell 구현 (fork/exec/wait) |
+| **저수준 파일 I/O** — open/read/write/lseek, 파일 디스크립터, ioctl |
+| **디렉토리 제어** — opendir/readdir/mkdir/chdir, dup/dup2 |
+| **프로세스 제어** — fork/system/wait/waitpid/exit, 좀비 프로세스 |
 
 ---
 
@@ -120,8 +107,7 @@ main (현재)         ← 전체 안내 허브
 | 2️⃣ | Week 4 | Qt 프레임워크 | `stage/qt` |
 | 3️⃣ | Week 5~6 | 임베디드 시스템 & ARM | `stage/embedded` |
 | 4️⃣ | Week 6~7 | Linux & Bash | `stage/linux` |
-| 5️⃣ | Week 8 | GCC/GDB/CMake/Docker, 시스템 프로그래밍 | `main` |
-| 6️⃣ | Week 9 | 저수준 파일 I/O, 프로세스 제어 | `main` |
+| 5️⃣ | Week 8~9 | GCC/GDB/CMake/Docker, 시스템 프로그래밍, 프로세스 제어 | `stage/linux-sys` |
 | ➕ | - | 알고리즘 그룹 스터디 | `group-study` |
 
 ---

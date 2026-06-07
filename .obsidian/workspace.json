@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MD/Week9/Day38/Day38.md",
+                "file": "MD/Week11/Day46/Day46.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day38"
+              "title": "Day46"
+            }
+          },
+          {
+            "id": "f04897199dadb540",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "GroupStudy/TCP_SENSOR_CONTROL_PLAN.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TCP_SENSOR_CONTROL_PLAN"
             }
           }
         ]
@@ -78,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b10e754e0af726b8",
@@ -187,51 +200,51 @@
   },
   "active": "9e46cf85b372e79b",
   "lastOpenFiles": [
-    "Pasted image 20260518162845.png",
-    "Pasted image 20260518162616.png",
-    "Pasted image 20260518161546.png",
-    "Pasted image 20260518160732.png",
-    "Pasted image 20260518152945.png",
-    "Pasted image 20260518151508.png",
-    "Pasted image 20260518151506.png",
-    "Pasted image 20260518150426.png",
-    "Pasted image 20260518150122.png",
-    "Pasted image 20260518121204.png",
-    "Pasted image 20260518114601.png",
-    "MD/Week9/Day38/CodeBase.md",
+    "GroupStudy/TCP_SENSOR_CONTROL_PLAN.md",
+    "MD/Week11/Day46/Day46.md",
+    "MD/Week10/Day45/Day45.md",
+    "MD/Week11/Day46",
+    "MD/Week11",
+    "Pasted image 20260529120833.png",
+    "Pasted image 20260529120823.png",
+    "Pasted image 20260529120424.png",
+    "Pasted image 20260529120339.png",
+    "Pasted image 20260529120308.png",
+    "Pasted image 20260529094709.png",
+    "MD/Week10/Day44/Day44.md",
+    "MD/Week10/Day45",
+    "Pasted image 20260528152715.png",
+    "Pasted image 20260528152640.png",
+    "Pasted image 20260528140525.png",
+    "Pasted image 20260528124525.png",
+    "MD/Week8/Day34/Day34.md",
     "MD/Week9/Day38/Day38.md",
+    "MD/Week10/Day42/Day42.md",
+    "MD/Week10/Day44",
+    "무제 1.md",
+    "MD/Week9/Day41/Day41.md",
+    "MD/Week10/Day42",
+    "MD/Week10",
+    "MD/Week6/Day26/Day26.md",
+    "README.md",
+    "MD/Week9/Day39/Day39.md",
+    "MD/Week9/Day41",
+    "MD/Week9/Day39",
+    "MD/Week9/Day38/CodeBase.md",
     "MD/Week9/Day38",
     "MD/Week8/Day37/Day37.md",
     "MD/Week9",
-    "무제",
     "MD/Week8/Day36/Day36.md",
-    "MD/Week8/Day37",
     "MD/Week7/Day30/Day30.md",
     "MD/Week6/Day29/Day29.md",
     "MD/Week6/Day28/Day28.md",
     "MD/Week6/Day27/Day27.md",
-    "MD/Week6/Day26/Day26.md",
     "MD/Week5/Day 25/Day 25.md",
     "MD/Week5/Day 24/Day 24.md",
-    "MD/Week8/Day36",
     "MD/Week5/Day 22/Day 22.md",
     "MD/Week5/Day 21/Day 21.md",
     "MD/Week4/Day 20/Day 20.md",
-    "MD/Week8/Day34/Day34.md",
     "MD/Week7/Day32/Day32.md",
-    "MD/Week7/Day31/Day31.md",
-    "MD/Week8/Day34",
-    "MD/Week8",
-    "workspace/Week5/advanced_is_multiple.s",
-    "workspace/Week5/is_multiple.s",
-    "workspace/Week5/func_call.s",
-    "GroupStudy/Search.md",
-    "MD/Week4/Day 19/Day 19.md",
-    "MD/VEDA Study.md",
-    "MD/Week4/Day 16/Day 16.md",
-    "MD/Week4/Day 16/CodeBase.md",
-    "MD/Week4/Day 17/Day 17.md",
-    "MD/Week4/Day 17/CodeBase.md",
-    "MD/Week4/Day 18/Day 18.md"
+    "MD/Week7/Day31/Day31.md"
   ]
 }

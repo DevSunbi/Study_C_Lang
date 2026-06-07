@@ -98,8 +98,8 @@ int ioctl(int fd, int request, struct termios *tbuf);
 	* Canonical Mode에서는 EOF, Enter를 활용해 명령어 입력
 	* Non-Canonical Mode에서는 입력 문자는 최소 Min, 1/10s TIME 배의 시간이 경과하면 입력 문자가 프로그램에 전달
 #### 파일 중첩
-* 서로 다른 파일 디스크립터가 동일한 파일을 접근 할 서 있게
-* dup(), dup2() 함수가 해당 기능 찹재
+* 서로 다른 파일 디스크립터가 동일한 파일을 접근 할 수 있게
+* dup(), dup2() 함수가 해당 기능 탑재
 * 파이프를 이용한 프로세스 간의 통신이나 소켓 통신에도 적용해 사용 가능
 ```c
 #include <unistd.h>

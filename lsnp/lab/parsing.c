@@ -7,7 +7,7 @@ char** command_parse(char *line) {
   	char * token;
   	char **arglist;
 
-  	if (line == NULL || line[0] == '\n') {
+  	if (line == NULL) {
     	return NULL;
   	}
 

@@ -13,8 +13,16 @@ stage/linux-sys/
 │   │   ├── Day34/   ← GCC 컴파일 파이프라인, GDB 디버거
 │   │   ├── Day36/   ← CMake 빌드 시스템, Docker, Git
 │   │   └── Day37/   ← Linux 커널/시스템 콜, My Shell 구현, 파일시스템
-│   └── Week9/
-│       └── Day38/   ← 저수준 파일 I/O, 디렉토리 제어, 프로세스
+│   ├── Week9/
+│   │   ├── Day38/   ← 저수준 파일 I/O, 디렉토리 제어, 프로세스
+│   │   ├── Day39/   ← 프로세스 교체(exec), 시그널 제어
+│   │   └── Day41/   ← IPC (파이프, 메시지 큐, 공유 메모리, 세마포어)
+│   ├── Week10/
+│   │   ├── Day42/   ← 멀티스레드 프로그래밍, 동기화(Mutex/Semaphore)
+│   │   ├── Day44/   ← TCP/IP 프로토콜, 소켓 프로그래밍 API (TCP)
+│   │   └── Day45/   ← UDP 프로그래밍, 입출력 다중화(select, poll)
+│   └── Week11/
+│       └── Day46/   ← epoll 기반 입출력 다중화
 └── README.md
 ```
 
@@ -75,6 +83,66 @@ stage/linux-sys/
 | **프로세스 생성** — fork() 동작 원리, Copy-on-Write, 반환값 구분 |
 | **좀비 프로세스** — wait/waitpid로 SIGCHLD 처리 |
 | **프로세스 종료** — exit(), 입출력 버퍼 비우기, 파일 디스크립터 close |
+
+#### Day39 — 프로세스 교체 & 시그널
+| 핵심 주제 |
+|-----------|
+| **프로세스 교체** — exec 계열 함수(execl, execv, execlp 등) 사용법 |
+| **시그널(Signal)** — 시그널 종류(SIGINT, SIGKILL, SIGCHLD 등)와 개념 |
+| **시그널 핸들러** — signal(), sigaction() 활용한 시그널 등록 |
+| **시그널 셋 제어** — sigprocmask() 시그널 블록 마스크, sigpending, sigsuspend |
+| **타이머 시그널** — alarm(), setitimer()/getitimer() 인터벌 타이머 |
+
+#### Day41 — IPC (Inter-Process Communication)
+| 핵심 주제 |
+|-----------|
+| **IPC 표준** — System V IPC vs POSIX IPC |
+| **파이프** — 익명 파이프(pipe()), 이름 있는 파이프(mkfifo()) |
+| **메시지 큐** — msgget, msgsnd, msgrcv, msgctl 양방향 통신 |
+| **공유 메모리** — shmget, shmat, shmdt, shmctl 고속 데이터 교환 |
+| **세마포어** — semget, semop (P/V 연산), semctl 자원 보호 |
+| **메모리 맵** — shm_open, mmap, munmap, msync 가상 주소 매핑 |
+
+---
+
+### 🧵 Week 10 — 멀티스레드 & 네트워크 프로그래밍
+
+#### Day42 — 멀티스레드 프로그래밍
+| 핵심 주제 |
+|-----------|
+| **멀티스레드 개념** — 프로세스 자원 공유, 스레드의 장단점 |
+| **스레드 API** — pthread_create, pthread_join, pthread_exit, pthread_cancel |
+| **스레드 분리** — pthread_detach를 활용한 자원 자동 회수 |
+| **동기화 기법** — 뮤텍스(pthread_mutex), 세마포어(sem_init/sem_wait/sem_post) |
+| **클린업 핸들러** — pthread_cleanup_push/pop을 이용한 비정상 종료 대비 자원 해제 |
+| **멀티스레드 시그널** — pthread_sigmask, pthread_kill, sigwait 전담 처리 |
+
+#### Day44 — TCP/IP 프로토콜 & 소켓 API
+| 핵심 주제 |
+|-----------|
+| **TCP/IP 프로토콜** — Connection-Oriented, 신뢰성 전송, 흐름 제어, 3-way handshake |
+| **진단 도구** — ifconfig, ss, tcpdump, wireshark 네트워크 분석 |
+| **바이트 순서** — 빅 엔디안/리틀 엔디안 변환 (htons, htonl, ntohs, ntohl) |
+| **소켓 API** — socket, bind, listen, accept, connect, send/recv, close |
+
+#### Day45 — UDP & 입출력 다중화 (select, poll)
+| 핵심 주제 |
+|-----------|
+| **UDP 프로토콜** — Connectionless, 데이터그램 전송(sendto, recvfrom) |
+| **넌블로킹 I/O** — 블로킹 방지 및 즉시 반환 처리 |
+| **입출력 다중화** — 멀티 프로세스/스레드 대비 select/poll 방식의 장점 |
+| **select 방식** — fd_set 테이블 모니터링, FD_ZERO/SET/CLR/ISSET 매크로 |
+| **poll 방식** — pollfd 구조체 배열 기반 이벤트 감지 |
+
+---
+
+### 🚀 Week 11 — 고급 입출력 다중화 (epoll)
+
+#### Day46 — epoll
+| 핵심 주제 |
+|-----------|
+| **select/poll 한계** — 접속자 수 비례 선형 탐색 오버헤드, 매번 모니터링 등록 비효율성 |
+| **epoll 방식** — 커널 레벨 이벤트 등록 및 확인으로 탐색 시간 단축, 고성능 서버 최적화 |
 
 ---
 

@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\Sunbi\source\repos\Day8\main.c(13,8): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
+  Day8.vcxproj -> C:\Users\Sunbi\source\repos\Day8\x64\Debug\Day8.exe

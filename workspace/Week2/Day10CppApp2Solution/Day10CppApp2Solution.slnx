@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Day10CppApp2/Day10CppApp2.vcxproj" Id="c0c13b96-7183-42bd-b5a3-36df781d0c49" />
+</Solution>

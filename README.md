@@ -87,6 +87,18 @@ main (현재)         ← 전체 안내 허브
 
 ---
 
+### 🟤 [main](../../tree/main) — 임베디드 리눅스 시스템 & 디바이스 제어 (Week 10 ~ Week 14)
+> **Week 10 ~ Week 14** | 강의 노트 + 실습 코드 + 시험 대비 정리
+
+| 핵심 주제 |
+|-----------|
+| **멀티스레드 & 네트워크** — TCP/UDP 소켓 프로그래밍, epoll I/O 멀티플렉싱 |
+| **디바이스 드라이버** — 리눅스 커널 구조, mknod 디바이스 파일 생성, LED GPIO 제어 |
+| **임베디드 리눅스 빌드** — U-Boot 부트로더 포팅, Yocto Project (Poky, BitBake) 구축 |
+| **디버깅 & 영상처리** — ftrace 커널 트레이싱, OpenCV 기반 컬러 제어 및 영상 처리 |
+
+---
+
 ### 🔴 [group-study](../../tree/group-study) — 알고리즘 그룹 스터디
 > 교육과정 外 알고리즘 스터디 | C/C++ 구현 코드
 
@@ -108,7 +120,17 @@ main (현재)         ← 전체 안내 허브
 | 3️⃣ | Week 5~6 | 임베디드 시스템 & ARM | `stage/embedded` |
 | 4️⃣ | Week 6~7 | Linux & Bash | `stage/linux` |
 | 5️⃣ | Week 8~9 | GCC/GDB/CMake/Docker, 시스템 프로그래밍, 프로세스 제어 | `stage/linux-sys` |
+| 6️⃣ | Week 10~11 | 네트워크 프로토콜 (TCP/UDP), 멀티스레드, epoll 멀티플렉싱 | `main` |
+| 7️⃣ | Week 12 | 리눅스 커널 모듈 & GPIO 디바이스 드라이버 | `main` |
+| 8️⃣ | Week 13 | 부트로더(U-Boot) 포팅 & Yocto 빌드 시스템 구축 | `main` |
+| 9️⃣ | Week 14 | ftrace 커널 디버깅 & OpenCV 영상 처리 | `main` |
 | ➕ | - | 알고리즘 그룹 스터디 | `group-study` |
+
+---
+
+## 📝 시험 대비 정리
+
+- [Week 12-13 시험 대비 정리](Week12_13_시험대비_정리.md): Week 12~13 범위 (리눅스 커널, 디바이스 드라이버, U-Boot, Yocto)의 내용을 단권화하여 정리한 요약본입니다.
 
 ---
 

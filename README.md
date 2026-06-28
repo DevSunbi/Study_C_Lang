@@ -1,136 +1,129 @@
-# 📚 VEDA C Language Study
+# 📟 stage/embedded-linux — 임베디드 리눅스 시스템 & 디바이스 제어 학습 노트
 
-> C언어부터 임베디드 시스템, Linux까지 — VEDA 교육과정 학습 기록 저장소입니다.  
-> 브랜치별로 학습 단계가 분리되어 있습니다. 아래에서 원하는 주제를 선택하세요.
+> VEDA 교육과정 中 **리눅스 커널 모듈, 캐릭터 디바이스 드라이버, GPIO 제어, U-Boot 부트로더 포팅, Yocto Project 기반 OS 빌드, ftrace 디버깅 및 OpenCV 영상 처리**를 다루는 브랜치입니다.
 
 ---
 
-## 🗺️ 브랜치 구조
+## 📁 브랜치 구조
 
 ```
-main (현재)         ← 전체 안내 허브
-├── stage/c-cpp     ← C / C++ 기초~OOP 심화
-├── stage/qt        ← Qt 프레임워크
-├── stage/embedded  ← 임베디드 시스템 (ARM/STM32/RPi)
-├── stage/linux     ← Linux & Bash 시스템 프로그래밍
-└── group-study     ← 알고리즘 그룹 스터디
+stage/embedded-linux/
+├── MD/
+│   ├── Week12/
+│   │   ├── Day50/   ← 리눅스 커널 구조, 모듈형 디바이스 드라이버 개요
+│   │   ├── Day51/   ← 장치 파일 생성(mknod), 가상 디바이스 드라이버 개발
+│   │   ├── Day52/   ← LED/스위치 제어를 위한 GPIO 드라이버 설계 및 MMIO
+│   │   └── Day53/   ← sysfs 및 인터럽트 연동 커널 모듈 작성
+│   ├── Week13/
+│   │   ├── Day54/   ← 임베디드 리눅스 아키텍처 개요, 빌드 툴체인
+│   │   ├── Day55/   ← U-Boot 부트로더 커스텀 보드 포팅 및 부팅 흐름
+│   │   ├── Day56/   ← Yocto Project 기본 개념 및 환경 설정
+│   │   └── Day58/   ← Poky 배포판, BitBake 레시피 작성 및 루트 파일시스템 빌드
+│   ├── Week14/
+│   │   ├── Day59/   ← ftrace를 이용한 커널 디버깅 및 프로파일링
+│   │   ├── Day60/   ← OpenCV 영상 처리 개요, HSV/RGB 컬러 모델
+│   │   ├── Day61/   ← 픽셀 수준 이진화(Threshold) 및 룩업테이블 적용
+│   │   └── Day62/   ← 기하학적 투영 변환(Perspective Transform) 및 필터링
+│   └── Protocol/    ← UART, SPI, I2C 통신 프로토콜 정리
+├── Week12_13_시험대비_정리.md  ← 시험 대비 핵심 요약 단권화 문서
+└── README.md
 ```
 
 ---
 
-## 🔀 브랜치별 학습 내용
+## 📚 학습 내용
 
-### 🔵 [stage/c-cpp](../../tree/stage/c-cpp) — C / C++ 기초~OOP 심화
-> **Week 1 ~ Week 3** | 강의 노트 + 실습 코드
+### 🔌 Week 12 — 리눅스 디바이스 드라이버
 
+#### Day50 — 리눅스 커널 & 모듈 프로그래밍
 | 핵심 주제 |
 |-----------|
-| C 기초 문법, 함수, 배열, **포인터**, 동적 메모리 관리 |
-| 구조체(`typedef struct`), 공용체, 열거형, 파일 입출력 |
-| C++ 레퍼런스, 예외처리, **OOP** (클래스/상속/다형성/가상함수) |
-| 복사 생성자, 정적 멤버, **템플릿(Template)**, **STL 컨테이너** |
+| **리눅스 커널 구조** — 자원 관리, 가상 파일시스템(VFS), 유저 영역과의 API 추상화 |
+| **커널 모듈** — 동적 모듈 적재 및 커널 확장, `module_init()`, `module_exit()` |
+| **모듈 명령어** — `insmod`(적재), `rmmod`(제거), `lsmod`(조회), `modinfo`(정보 확인) |
+| **디렉터리 및 slab** — 커널 메모리 동적 할당 (`kmalloc`, `<linux/slab.h>`) |
 
----
-
-### 🟣 [stage/qt](../../tree/stage/qt) — Qt 프레임워크
-> **Week 4** | 강의 노트 + 실습 코드
-
+#### Day51 — 캐릭터 디바이스 드라이버 & 장치 파일
 | 핵심 주제 |
 |-----------|
-| Qt 아키텍처(MVC), CMake/QMake 빌드, **QMainWindow** |
-| QCheckBox, QComboBox, Qt Designer, **Signal/Slot** |
-| Layout, QString, QVariant, QMap/QHash |
-| **QDialog**, **Model-View 아키텍처**, **QPainter** 2D 그래픽스 |
+| **장치 파일 생성** — `mknod` 장치 파일 수동 생성 (`/dev`), 주 번호(Major) 및 부 번호(Minor) |
+| **file_operations 구조체** — `open`, `read`, `write`, `unlocked_ioctl` 등 시스템 콜 함수 포인터 매핑 |
+| **유저-커널 데이터 교환** — `copy_to_user()` (커널→유저), `copy_from_user()` (유저→커널) |
+| **동적 디바이스 드라이버 등록** — `alloc_chrdev_region()`, `cdev_init()`, `cdev_add()` 및 `class_create()`, `device_create()` 자동 생성 |
 
----
-
-### 🟠 [stage/embedded](../../tree/stage/embedded) — 임베디드 시스템
-> **Week 5 ~ Week 6 (Day26~27)** + **Protocol/** | 강의 노트 + 실습 코드
-
+#### Day52 — GPIO 드라이버 & MMIO 제어
 | 핵심 주제 |
 |-----------|
-| **멀티스레드**, Mutex, DeadLock, Race Condition |
-| **ARM 어셈블리(ASM)**, Cortex-M4, 크로스 컴파일 환경 |
-| MCU 구조, DMA/Timer/GPIO, **인터럽트**(NVIC/ISR/EXTI) |
-| **UART/SPI/I2C** 통신 프로토콜, STM32 HAL/CMSIS |
-| Raspberry Pi GPIO, wiringPi LED/버튼 제어 |
+| **BCM2711 레지스터** — 라즈베리파이 4 GPIO 컨트롤러, MMIO 가상 주소 매핑 |
+| **레지스터 가상 매핑** — `ioremap()`, `iounmap()` 함수를 통한 물리 주소 접근 |
+| **GPIO 입력/출력 설정** — 함수 선택 레지스터(GPFSEL), 출력 설정(GPSET), 출력 해제(GPCLR) |
+| **GPIO 드라이버 구현** — 유저 영역 write 요청을 통해 LED On/Off를 수행하는 드라이버 코드 실습 |
 
----
-
-### 🟢 [stage/linux](../../tree/stage/linux) — Linux & Bash 시스템 프로그래밍
-> **Week 6 (Day28~29) ~ Week 9** | 강의 노트 (실습 코드: MD 내 코드블록)
-
+#### Day53 — 드라이버 활용 & 모듈 배포
 | 핵심 주제 |
 |-----------|
-| 운영체제 구조, Kernel, 리눅스 배포판, 파일시스템 |
-| SoftLink/HardLink(inode), 사용자/권한 관리(chmod/chown) |
-| **프로세스 관리**, PCB, IPC(파이프/소켓/공유메모리/세마포어) |
-| **Bash 스크립팅** (변수/조건문/반복문/함수/확장/리디렉션/파이프라인) |
-| **systemd**, systemctl, bashrc, alias, CLI 툴(grep/find/awk) |
+| **커널 모듈 종속성** — `depmod -a` 명령어로 모듈 종속성 파일 생성 |
+| **자동 모듈 적재** — `/etc/modules` 등록 혹은 `modprobe`를 활용한 의존성 자동 로드 |
 
 ---
 
-### 🔷 [stage/linux-sys](../../tree/stage/linux-sys) — Linux 시스템 프로그래밍 심화
-> **Week 8~9 (Day34, 36, 37, 38)** | 강의 노트 + 실습 코드
+### 🔩 Week 13 — 임베디드 리눅스 & Yocto 빌드 시스템
 
+#### Day54 — 임베디드 리눅스 개요
 | 핵심 주제 |
 |-----------|
-| **GCC** 컴파일 파이프라인 (전처리/컴파일/어셈블/링킹), ELF 포맷 |
-| **정적/공유/동적 라이브러리** (.a, .so, dlopen) |
-| **GDB** 디버거 — break/watch/step/backtrace, core 파일 분석 |
-| **CMake** 빌드 시스템 — 타깃 기반 모던 CMake, find_package |
-| **Docker** 컨테이너 — 이미지/컨테이너 구조, Dockerfile, 아키텍처 |
-| **Linux 시스템 콜** — errno, 환경변수, My Shell 구현 (fork/exec/wait) |
-| **저수준 파일 I/O** — open/read/write/lseek, 파일 디스크립터, ioctl |
-| **디렉토리 제어** — opendir/readdir/mkdir/chdir, dup/dup2 |
-| **프로세스 제어** — fork/system/wait/waitpid/exit, 좀비 프로세스 |
+| **임베디드 리눅스 아키텍처** — 툴체인, 부트로더, 커널, 루트 파일시스템, 어플리케이션 계층 구조 |
+| **리눅스 부팅 프로세스** — SoC ROM code → SPL → U-Boot → Linux Kernel → Systemd(Init) |
 
----
-
-### 🟤 [main](../../tree/main) — 임베디드 리눅스 시스템 & 디바이스 제어 (Week 10 ~ Week 14)
-> **Week 10 ~ Week 14** | 강의 노트 + 실습 코드 + 시험 대비 정리
-
+#### Day55 — U-Boot 부트로더
 | 핵심 주제 |
 |-----------|
-| **멀티스레드 & 네트워크** — TCP/UDP 소켓 프로그래밍, epoll I/O 멀티플렉싱 |
-| **디바이스 드라이버** — 리눅스 커널 구조, mknod 디바이스 파일 생성, LED GPIO 제어 |
-| **임베디드 리눅스 빌드** — U-Boot 부트로더 포팅, Yocto Project (Poky, BitBake) 구축 |
-| **디버깅 & 영상처리** — ftrace 커널 트레이싱, OpenCV 기반 컬러 제어 및 영상 처리 |
+| **U-Boot** — 오픈소스 임베디드 부트로더 기능, 메모리 적재 및 디바이스 커맨드 제어 |
+| **부팅 인자** — `bootargs` 커널 부팅 파라미터(rootfs 위치, 콘솔 터미널 설정 등) 전달 |
+| **커스텀 보드 포팅** — 신규 보드 구성을 위한 보드 초기화 소스코드 분석 및 환경설정 |
+
+#### Day56 — Yocto Project 기초
+| 핵심 주제 |
+|-----------|
+| **Yocto Project** — 커스텀 임베디드 Linux OS 빌드 시스템 개념, 메타데이터 구조 |
+| **주요 구성요소** — 레시피(`.bb`, `.bbappend`), 레이어(`meta-`), BitBake 빌드 엔진 |
+| **빌드 과정** — Source Fetch → Patch → Compile → Package → Image 생성 흐름 |
+
+#### Day58 — Poky & BitBake 심화
+| 핵심 주제 |
+|-----------|
+| **Poky 레퍼런스 시스템** — Poky에 포함된 OE-Core, BitBake, 메타데이터 구조 |
+| **BitBake 변수** — `PV`, `PR`, `DEPENDS`, `RDEPENDS`, `FILES` 등 주요 문법 |
+| **루트 파일시스템 빌드** — 빌드 디렉토리 구성(`conf/local.conf`, `conf/bblayers.conf`) 및 빌드 프로세스 실행 |
 
 ---
 
-### 🔴 [group-study](../../tree/group-study) — 알고리즘 그룹 스터디
-> 교육과정 外 알고리즘 스터디 | C/C++ 구현 코드
+### 🧵 Week 14 — 커널 디버깅 & OpenCV 영상 처리
 
-| 분류 | 내용 |
-|------|------|
-| **정렬** | 버블/선택/삽입/셸(Shell)/병합(Merge) 정렬 |
-| **탐색** | 이진 탐색 (Binary Search), BOJ 1920 |
-| **재귀** | 재귀 기초, 합계 계산, 피보나치 수열 |
-| **BOJ** | 2751 (정렬 비교 TLE 분석), 1920 (이진 탐색) |
+#### Day59 — ftrace 커널 트레이싱
+| 핵심 주제 |
+|-----------|
+| **ftrace 개념** — 커널 내부 동작을 기록 및 추적하는 리눅스 공식 트레이서 |
+| **debugfs 마운트** — `/sys/kernel/debug/tracing` 을 통한 가상 파일 인터페이스 접근 |
+| **트레이서 활용** — `function`, `function_graph` 필터링 및 trace 로그 분석 |
 
----
+#### Day60 — OpenCV 영상처리 기초
+| 핵심 주제 |
+|-----------|
+| **영상처리 시스템 구조** — 카메라 렌즈 입력 -> 센서 -> 영상처리 ISP -> 처리 영상 데이터 출력 |
+| **컬러 모델** — RGB(빛의 삼원색) 및 HSV(색상 Hue, 채도 Saturation, 명도 Value) 색 공간 분석 |
 
-## 📅 전체 커리큘럼 개요
+#### Day61 — 영상 픽셀 제어 & 이진화
+| 핵심 주제 |
+|-----------|
+| **픽셀 엑세스** — OpenCV `Mat` 클래스 행렬 데이터를 활용한 픽셀값 변환 |
+| **이진화(Threshold)** — 특정 임계값을 기준으로 0과 255 값으로 단순화하는 기법 |
+| **룩업테이블(LUT)** — 입력 화소값을 출력 화소값으로 고속 매핑하는 배열 활용 |
 
-| 단계 | 주차 | 내용 | 브랜치 |
-|------|------|------|--------|
-| 1️⃣ | Week 1~3 | C 기초 → C++ OOP 심화 | `stage/c-cpp` |
-| 2️⃣ | Week 4 | Qt 프레임워크 | `stage/qt` |
-| 3️⃣ | Week 5~6 | 임베디드 시스템 & ARM | `stage/embedded` |
-| 4️⃣ | Week 6~7 | Linux & Bash | `stage/linux` |
-| 5️⃣ | Week 8~9 | GCC/GDB/CMake/Docker, 시스템 프로그래밍, 프로세스 제어 | `stage/linux-sys` |
-| 6️⃣ | Week 10~11 | 네트워크 프로토콜 (TCP/UDP), 멀티스레드, epoll 멀티플렉싱 | `main` |
-| 7️⃣ | Week 12 | 리눅스 커널 모듈 & GPIO 디바이스 드라이버 | `main` |
-| 8️⃣ | Week 13 | 부트로더(U-Boot) 포팅 & Yocto 빌드 시스템 구축 | `main` |
-| 9️⃣ | Week 14 | ftrace 커널 디버깅 & OpenCV 영상 처리 | `main` |
-| ➕ | - | 알고리즘 그룹 스터디 | `group-study` |
-
----
-
-## 📝 시험 대비 정리
-
-- [Week 12-13 시험 대비 정리](Week12_13_시험대비_정리.md): Week 12~13 범위 (리눅스 커널, 디바이스 드라이버, U-Boot, Yocto)의 내용을 단권화하여 정리한 요약본입니다.
+#### Day62 — 기하학적 투영 변환
+| 핵심 주제 |
+|-----------|
+| **투영 변환** — 어핀 변환과의 차이, 4점 매칭을 이용한 `getPerspectiveTransform` 과 `warpPerspective` |
 
 ---
 
@@ -138,18 +131,23 @@ main (현재)         ← 전체 안내 허브
 
 | 항목 | 내용 |
 |------|------|
-| 언어 | C (C99/C11), C++, Bash |
-| IDE | Visual Studio, VS Code, Qt Creator, STM32CubeIDE |
-| 컴파일러 | MSVC (cl.exe), GCC/G++, Qt (MSVC/MinGW), arm-none-eabi-gcc |
-| 플랫폼 | Windows, Linux (WSL2), STM32 Nucleo401RE, Raspberry Pi 4B |
+| OS | Ubuntu 22.04 (WSL2), Raspberry Pi OS Lite (64-bit) |
+| 컴파일러 | GCC/G++, arm-none-eabi-gcc, aarch64-linux-gnu-gcc (크로스 컴파일러) |
+| 빌드 도구 | Make, BitBake (Yocto Project Kirkstone) |
+| 라이브러리 | OpenCV 4.x |
+| 대상 하드웨어 | Raspberry Pi 4B, STM32 Nucleo401RE |
 
 ---
 
-## 👤 Author
+## 🔗 연관 브랜치
 
-- **분야**: C언어 시스템 프로그래밍 / 임베디드 / 알고리즘
-- **목표**: 하드웨어 제어부터 시스템 프로그래밍까지 가능한 시스템 전문가
+| 브랜치 | 내용 |
+|--------|------|
+| [main](../../tree/main) | 전체 허브 |
+| [stage/linux](../../tree/stage/linux) | Linux OS 구조, Bash 스크립팅, systemd (Week 6~7) |
+| [stage/linux-sys](../../tree/stage/linux-sys) | GCC/GDB, CMake, 프로세스/스레드, epoll (Week 8~11) |
+| [stage/embedded](../../tree/stage/embedded) | ARM 임베디드, MCU(STM32) 베어메탈/HAL 펌웨어 (Week 5~6) |
 
 ---
 
-*학습 중인 내용으로, 지속적으로 업데이트됩니다. 🚀*
+*지속적으로 업데이트됩니다. 🚀*

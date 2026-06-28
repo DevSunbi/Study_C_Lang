@@ -71,31 +71,25 @@ main (현재)         ← 전체 안내 허브
 ---
 
 ### 🔷 [stage/linux-sys](../../tree/stage/linux-sys) — Linux 시스템 프로그래밍 심화
-> **Week 8~9 (Day34, 36, 37, 38)** | 강의 노트 + 실습 코드
+> **Week 8 ~ Week 11** | 강의 노트 + 실습 코드
 
 | 핵심 주제 |
 |-----------|
-| **GCC** 컴파일 파이프라인 (전처리/컴파일/어셈블/링킹), ELF 포맷 |
-| **정적/공유/동적 라이브러리** (.a, .so, dlopen) |
-| **GDB** 디버거 — break/watch/step/backtrace, core 파일 분석 |
-| **CMake** 빌드 시스템 — 타깃 기반 모던 CMake, find_package |
-| **Docker** 컨테이너 — 이미지/컨테이너 구조, Dockerfile, 아키텍처 |
-| **Linux 시스템 콜** — errno, 환경변수, My Shell 구현 (fork/exec/wait) |
-| **저수준 파일 I/O** — open/read/write/lseek, 파일 디스크립터, ioctl |
-| **디렉토리 제어** — opendir/readdir/mkdir/chdir, dup/dup2 |
-| **프로세스 제어** — fork/system/wait/waitpid/exit, 좀비 프로세스 |
+| **GCC/GDB/CMake** — 컴파일 파이프라인, 모던 CMake 빌드 시스템, GDB 디버깅 및 Core 분석 |
+| **Docker** — 가상화 아키텍처, Dockerfile 작성 및 컨테이너 활용 |
+| **Linux 시스템 콜 & 저수준 I/O** — My Shell 구현, 파일/디렉토리 제어, IPC (파이프, 공유메모리, 세마포어) |
+| **네트워크 & 멀티스레드** — TCP/UDP 소켓 프로그래밍, pthread 스레드 동기화, epoll 다중화 |
 
 ---
 
-### 🟤 [main](../../tree/main) — 임베디드 리눅스 시스템 & 디바이스 제어 (Week 10 ~ Week 14)
-> **Week 10 ~ Week 14** | 강의 노트 + 실습 코드 + 시험 대비 정리
+### 📟 [stage/embedded-linux](../../tree/stage/embedded-linux) — 임베디드 리눅스 시스템 & 디바이스 제어 (Week 12 ~ Week 14)
+> **Week 12 ~ Week 14** | 강의 노트 + 실습 코드 + 시험 대비 정리
 
 | 핵심 주제 |
 |-----------|
-| **멀티스레드 & 네트워크** — TCP/UDP 소켓 프로그래밍, epoll I/O 멀티플렉싱 |
-| **디바이스 드라이버** — 리눅스 커널 구조, mknod 디바이스 파일 생성, LED GPIO 제어 |
+| **디바이스 드라이버** — 리눅스 커널 구조, mknod 디바이스 파일 생성, LED/스위치 제어 GPIO 드라이버 |
 | **임베디드 리눅스 빌드** — U-Boot 부트로더 포팅, Yocto Project (Poky, BitBake) 구축 |
-| **디버깅 & 영상처리** — ftrace 커널 트레이싱, OpenCV 기반 컬러 제어 및 영상 처리 |
+| **디버깅 & 영상처리** — ftrace 커널 트레이싱, OpenCV 기반 컬러 제어 및 기하학적 영상 처리 |
 
 ---
 
@@ -119,11 +113,8 @@ main (현재)         ← 전체 안내 허브
 | 2️⃣ | Week 4 | Qt 프레임워크 | `stage/qt` |
 | 3️⃣ | Week 5~6 | 임베디드 시스템 & ARM | `stage/embedded` |
 | 4️⃣ | Week 6~7 | Linux & Bash | `stage/linux` |
-| 5️⃣ | Week 8~9 | GCC/GDB/CMake/Docker, 시스템 프로그래밍, 프로세스 제어 | `stage/linux-sys` |
-| 6️⃣ | Week 10~11 | 네트워크 프로토콜 (TCP/UDP), 멀티스레드, epoll 멀티플렉싱 | `main` |
-| 7️⃣ | Week 12 | 리눅스 커널 모듈 & GPIO 디바이스 드라이버 | `main` |
-| 8️⃣ | Week 13 | 부트로더(U-Boot) 포팅 & Yocto 빌드 시스템 구축 | `main` |
-| 9️⃣ | Week 14 | ftrace 커널 디버깅 & OpenCV 영상 처리 | `main` |
+| 5️⃣ | Week 8~11 | GCC/GDB/CMake, 프로세스/스레드, IPC, TCP/UDP 소켓, epoll | `stage/linux-sys` |
+| 6️⃣ | Week 12~14 | 커널 디바이스 드라이버, U-Boot 포팅, Yocto OS 빌드, 영상 처리 | `stage/embedded-linux` |
 | ➕ | - | 알고리즘 그룹 스터디 | `group-study` |
 
 ---

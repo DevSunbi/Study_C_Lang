@@ -8,12 +8,14 @@
 ## 🗺️ 브랜치 구조
 
 ```
-main (현재)         ← 전체 안내 허브
-├── stage/c-cpp     ← C / C++ 기초~OOP 심화
-├── stage/qt        ← Qt 프레임워크
-├── stage/embedded  ← 임베디드 시스템 (ARM/STM32/RPi)
-├── stage/linux     ← Linux & Bash 시스템 프로그래밍
-└── group-study     ← 알고리즘 그룹 스터디
+main (현재)              ← 전체 안내 허브
+├── stage/c-cpp          ← C / C++ 기초~OOP 심화 (Week 1 ~ 3)
+├── stage/qt             ← Qt 프레임워크 (Week 4)
+├── stage/embedded       ← 임베디드 시스템 베어메탈/HAL (Week 5 ~ 6)
+├── stage/linux          ← Linux & Bash 시스템 프로그래밍 (Week 6 ~ 7)
+├── stage/linux-sys      ← GCC/GDB, CMake, IPC, 소켓, epoll (Week 8 ~ 11)
+├── stage/embedded-linux ← 커널 드라이버, U-Boot, Yocto, 영상 처리 (Week 12 ~ 14)
+└── group-study          ← 알고리즘 그룹 스터디
 ```
 
 ---
@@ -129,10 +131,11 @@ main (현재)         ← 전체 안내 허브
 
 | 항목 | 내용 |
 |------|------|
-| 언어 | C (C99/C11), C++, Bash |
-| IDE | Visual Studio, VS Code, Qt Creator, STM32CubeIDE |
-| 컴파일러 | MSVC (cl.exe), GCC/G++, Qt (MSVC/MinGW), arm-none-eabi-gcc |
-| 플랫폼 | Windows, Linux (WSL2), STM32 Nucleo401RE, Raspberry Pi 4B |
+| OS | Windows, Ubuntu 22.04 (WSL2), Raspberry Pi OS Lite (64-bit) |
+| 컴파일러 | MSVC, GCC/G++, arm-none-eabi-gcc, aarch64-linux-gnu-gcc |
+| 빌드 도구 | CMake, Make, BitBake (Yocto Project Kirkstone) |
+| 라이브러리 | Qt 6.x, OpenCV 4.x |
+| 대상 하드웨어 | Raspberry Pi 4B, STM32 Nucleo401RE |
 
 ---
 

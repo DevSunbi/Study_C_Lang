@@ -1,3 +1,0 @@
-#### XML
-* Extensible Markup Language
-* 

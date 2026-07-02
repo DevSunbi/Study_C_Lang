@@ -1,0 +1,1 @@
+savedcmd_/home/sunbi/lsnp/sk_led/sk_btn.ko := aarch64-linux-gnu-ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/sunbi/lsnp/sk_led/sk_btn.ko /home/sunbi/lsnp/sk_led/sk_btn.o /home/sunbi/lsnp/sk_led/sk_btn.mod.o /home/sunbi/lsnp/sk_led/.module-common.o

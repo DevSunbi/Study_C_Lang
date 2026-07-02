@@ -1,0 +1,1 @@
+savedcmd_/home/sunbi/lsnp/sk_led/sk_buzzer.ko := aarch64-linux-gnu-ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/sunbi/lsnp/sk_led/sk_buzzer.ko /home/sunbi/lsnp/sk_led/sk_buzzer.o /home/sunbi/lsnp/sk_led/sk_buzzer.mod.o /home/sunbi/lsnp/sk_led/.module-common.o

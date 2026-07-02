@@ -1,0 +1,1 @@
+savedcmd_/home/sunbi/lsnp/sk_led/modules.order := {   echo /home/sunbi/lsnp/sk_led/sk_btn.o;   echo /home/sunbi/lsnp/sk_led/sk_led.o;   echo /home/sunbi/lsnp/sk_led/sk_buzzer.o; :; } > /home/sunbi/lsnp/sk_led/modules.order

@@ -1,0 +1,1 @@
+savedcmd_/home/sunbi/lsnp/miniprj/alarm_device.ko := aarch64-linux-gnu-ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/sunbi/lsnp/miniprj/alarm_device.ko /home/sunbi/lsnp/miniprj/alarm_device.o /home/sunbi/lsnp/miniprj/alarm_device.mod.o /home/sunbi/lsnp/miniprj/.module-common.o

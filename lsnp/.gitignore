@@ -1,0 +1,49 @@
+# 컴파일된 바이너리 (확장자 없는 실행파일 제외 - 소스와 함께 추적)
+*.o
+*.ko
+*.mod
+*.mod.c
+*.mod.o
+*.so
+*.a
+
+# 커널 모듈 빌드 아티팩트
+modules.order
+Module.symvers
+
+# Zone.Identifier (Windows WSL 아티팩트)
+*:Zone.Identifier
+
+# 압축 파일 (필요시 개별 추가)
+# *.zip
+
+# CMake 빌드 디렉토리
+build/
+install/
+
+# VSCode
+.vscode/
+
+# 로그 파일
+*.log
+
+# 대용량 서브모듈 디렉토리 (별도 관리)
+rpi/WiringPi/
+ub/u-boot/
+yocto/poky/
+piy/meta-openembedded/
+piy/meta-raspberrypi/
+box/busybox/
+strace_example/strace_example
+uftrace_example/strace_example
+uftrace_example/uftrace_example
+openssl_example/mtls/client
+openssl_example/mtls/server
+openssl_example/notls/client
+openssl_example/notls/server
+openssl_example/tls/client
+openssl_example/tls/server
+
+# 라즈베리파이 빌드 아티팩트
+raspi/build/
+raspi/.vscode/

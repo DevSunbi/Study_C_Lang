@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raspberry Pi GPIO LED Control Panel">
+    <title>Raspberry Pi LED Controller</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: radial-gradient(circle at center, #1e1b4b, #030712);
+            --panel-bg: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --led-off-color: #374151;
+            --led-on-color: #10b981;
+            --led-on-shadow: 0 0 30px #10b981, 0 0 60px rgba(16, 185, 129, 0.4);
+            --btn-on-gradient: linear-gradient(135deg, #10b981, #059669);
+            --btn-off-gradient: linear-gradient(135deg, #ef4444, #dc2626);
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--text-primary);
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            width: 90%;
+            max-width: 450px;
+            padding: 40px 30px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #a5b4fc, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* LED Indicator Area */
+        .led-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .led-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            animation: rotateRing 20s linear infinite;
+        }
+
+        @keyframes rotateRing {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .led-bulb {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--led-off-color);
+            border: 3px solid rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 0 rgba(0, 0, 0, 0);
+        }
+
+        .led-bulb.active {
+            background: var(--led-on-color);
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.5), var(--led-on-shadow);
+        }
+
+        .led-label {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .led-label.active {
+            color: var(--led-on-color);
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Button Layout */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+        }
+
+        .btn-on {
+            background: var(--btn-on-gradient);
+        }
+
+        .btn-on:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-on:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-off {
+            background: var(--btn-off-gradient);
+        }
+
+        .btn-off:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-off:active {
+            transform: translateY(-1px);
+        }
+
+        /* Connection Status */
+        .status-bar {
+            margin-top: 35px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #9ca3af;
+            transition: background 0.3s ease;
+        }
+
+        .status-dot.connected {
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .status-dot.error {
+            background: #ef4444;
+            box-shadow: 0 0 8px #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>LED Controller</h1>
+        <p class="subtitle">Raspberry Pi Smart Control Panel</p>
+
+        <div class="led-wrapper">
+            <div class="led-ring"></div>
+            <div id="ledBulb" class="led-bulb"></div>
+        </div>
+        <div id="ledStatusLabel" class="led-label">LED STATUS: OFF</div>
+
+        <div class="btn-group">
+            <button id="btnOn" class="btn btn-on" onclick="controlLED('on')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                    <line x1="12" y1="2" x2="12" y2="12"></line>
+                </svg>
+                LED ON
+            </button>
+            <button id="btnOff" class="btn btn-off" onclick="controlLED('off')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="10" y1="15" x2="14" y2="15"></line>
+                </svg>
+                LED OFF
+            </button>
+        </div>
+
+        <div class="status-bar">
+            <div id="statusDot" class="status-dot connected"></div>
+            <span id="statusText">System Online</span>
+        </div>
+    </div>
+
+    <script>
+        const ledBulb = document.getElementById('ledBulb');
+        const ledStatusLabel = document.getElementById('ledStatusLabel');
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+
+        function updateUIState(state) {
+            if (state === 'on') {
+                ledBulb.classList.add('active');
+                ledStatusLabel.classList.add('active');
+                ledStatusLabel.textContent = 'LED STATUS: ON';
+            } else {
+                ledBulb.classList.remove('active');
+                ledStatusLabel.classList.remove('active');
+                ledStatusLabel.textContent = 'LED STATUS: OFF';
+            }
+        }
+
+        function setSystemStatus(status, text) {
+            statusDot.className = 'status-dot';
+            if (status === 'success') {
+                statusDot.classList.add('connected');
+            } else if (status === 'error') {
+                statusDot.classList.add('error');
+            }
+            statusText.textContent = text;
+        }
+
+        function controlLED(action) {
+            setSystemStatus('pending', 'Sending request...');
+
+            // GET /led/on 또는 /led/off 요청을 보냄
+            fetch(`/led/${action}`)
+                .then(response => {
+                    if (response.ok) {
+                        updateUIState(action);
+                        setSystemStatus('success', 'Command executed successfully');
+                    } else {
+                        throw new Error('Server responded with an error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    setSystemStatus('error', 'Failed to connect to Pi');
+                });
+        }
+    </script>
+</body>
+
+</html>
